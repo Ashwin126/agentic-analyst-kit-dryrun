@@ -93,6 +93,8 @@
     "avg_monthly_charge_mtm_churners": 72.4881479324403,
     "value_per_saved_customer_12m": 869.8577751892835,
     "customers_must_stay": 2299.226444880365,
+    "pilot_per_group": 4321,
+    "pilot_churn_offered_mid_case": 0.41362424817514154,
     "max_value_if_all_mtm_churners_saved": 1493545.7999999998,
     "cases": {
       "low": {
@@ -205,6 +207,50 @@
         "n_1yr": 634,
         "gap": 0.11689449702068
       }
+    },
+    "tenure_12m_bins": {
+      "0-12": {
+        "churn_mtm": 0.5308890005022602,
+        "churn_1yr": 0.13709677419354838,
+        "n_mtm": 1991,
+        "n_1yr": 124,
+        "gap": 0.3937922263087118
+      },
+      "13-24": {
+        "churn_mtm": 0.3880597014925373,
+        "churn_1yr": 0.10152284263959391,
+        "n_mtm": 737,
+        "n_1yr": 197,
+        "gap": 0.28653685885294344
+      },
+      "25-36": {
+        "churn_mtm": 0.3497942386831276,
+        "churn_1yr": 0.128,
+        "n_mtm": 486,
+        "n_1yr": 250,
+        "gap": 0.2217942386831276
+      },
+      "37-48": {
+        "churn_mtm": 0.3449367088607595,
+        "churn_1yr": 0.16044776119402984,
+        "n_mtm": 316,
+        "n_1yr": 268,
+        "gap": 0.18448894766672966
+      },
+      "49-60": {
+        "churn_mtm": 0.29914529914529914,
+        "churn_1yr": 0.1588785046728972,
+        "n_mtm": 234,
+        "n_1yr": 321,
+        "gap": 0.14026679447240195
+      },
+      "61-72": {
+        "churn_mtm": 0.23148148148148148,
+        "churn_1yr": 0.16293929712460065,
+        "n_mtm": 108,
+        "n_1yr": 313,
+        "gap": 0.06854218435688084
+      }
     }
   },
   "drivers": [
@@ -290,7 +336,7 @@
         "One year": 0.02345243041130038,
         "Two year": 0.01779944447593674
       },
-      "direction_within_contract": "mixed"
+      "direction_within_contract": "higher"
     },
     {
       "variable": "MultipleLines",
@@ -346,7 +392,7 @@
         "One year": 0.040638757804332515,
         "Two year": 0.017042486002136085
       },
-      "direction_within_contract": "mixed"
+      "direction_within_contract": "higher"
     },
     {
       "variable": "DeviceProtection",
@@ -360,7 +406,7 @@
         "One year": 0.030663131107927205,
         "Two year": 0.0039998154374996375
       },
-      "direction_within_contract": "mixed"
+      "direction_within_contract": "higher"
     },
     {
       "variable": "TechSupport",
@@ -426,7 +472,7 @@
         "One year": 0.0787239970282318,
         "Two year": 0.014768670819626233
       },
-      "direction_within_contract": "mixed"
+      "direction_within_contract": "higher"
     },
     {
       "variable": "PaymentMethod",
@@ -485,6 +531,14 @@
       "direction_within_contract": "lower"
     }
   ],
+  "mtm_tenure_mix": {
+    "0-12": 0.5142045454545454,
+    "25-48": 0.2071280991735537,
+    "13-24": 0.1903409090909091,
+    "49-72": 0.08832644628099173
+  },
+  "gap_weighted_by_mtm_tenure_mix": 0.30942050992165443,
+  "mtm_share_tenure_61_72": 0.027892561983471075,
   "loyalty_app_share_mtm": {
     "No": 0.2883806519453207,
     "Yes": 0.857540173053152
@@ -516,6 +570,8 @@
       "avg_monthly_charge_mtm_churners": 73.0316718266254,
       "value_per_saved_customer_12m": 876.3800619195048,
       "customers_must_stay": 2282.1149030016377,
+      "pilot_per_group": 3979,
+      "pilot_churn_offered_mid_case": 0.3863174713717437,
       "max_value_if_all_mtm_churners_saved": 1415353.8000000003,
       "cases": {
         "low": {

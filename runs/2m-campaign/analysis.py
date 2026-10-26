@@ -6,6 +6,7 @@ Reads data/raw/telco_v2.csv (never writes there). Writes every deliverable in ru
 (user decision: "yes" is the main case; "no" is always computed as a sensitivity check).
 """
 import argparse, json
+from math import ceil
 from pathlib import Path
 
 import matplotlib
@@ -21,6 +22,8 @@ CASES = {"low": (0.10, 0.25), "mid": (0.20, 0.50), "high": (0.35, 0.75)}  # (tak
 MAX_REMOVED_SHARE = 0.05
 TOL = 0.20  # MonthlyCharges must be within +/-20% of TotalCharges / tenure
 TENURE_BINS, TENURE_LABELS = [-1, 12, 24, 48, 72], ["0-12", "13-24", "25-48", "49-72"]
+YEAR_BINS, YEAR_LABELS = [-1, 12, 24, 36, 48, 60, 72], ["0-12", "13-24", "25-36", "37-48", "49-60", "61-72"]
+Z_ALPHA, Z_POWER = 1.96, 0.8416  # pilot sizing: two-sided 5% test, 80% power
 
 # Chart palette (dataviz skill reference palette): accent, de-emphasis gray, ink, surface
 ACCENT, GRAY, INK, INK2, MUTED, GRID, SURFACE = ("#2a78d6", "#c3c2b7", "#0b0b0b", "#52514e",
@@ -130,6 +133,11 @@ def sizing(df):
                     "value_at_file_n": n * v_per_cust,
                     "value_per_1000_mtm": 1000 * v_per_cust,
                     "break_even_mtm_base": COST / v_per_cust}
+    # Pilot for the test_first range: offered vs not-offered groups, sized to detect the mid case's churn drop
+    # across everyone offered (take-up x share real x gap); two-sided 5% test, 80% power
+    p_off = churn_mtm - CASES["mid"][0] * CASES["mid"][1] * gap
+    pilot_per_group = ceil((Z_ALPHA + Z_POWER) ** 2 * (churn_mtm * (1 - churn_mtm) + p_off * (1 - p_off))
+                           / (churn_mtm - p_off) ** 2)
     if cases["low"]["value_at_file_n"] >= COST:
         rec = "fund"
     elif cases["high"]["value_at_file_n"] < COST:
@@ -140,6 +148,7 @@ def sizing(df):
             "churn_mtm": churn_mtm, "churn_1yr": churn_1yr, "gap": gap,
             "avg_monthly_charge_mtm_churners": arpu, "value_per_saved_customer_12m": value_per_saved,
             "customers_must_stay": must_stay,
+            "pilot_per_group": pilot_per_group, "pilot_churn_offered_mid_case": p_off,
             "max_value_if_all_mtm_churners_saved": int(mtm.churned.sum()) * value_per_saved,
             "cases": cases, "recommendation": rec}
 
@@ -204,9 +213,9 @@ def drivers(df):
                 mc = f(df).loc[d.index]  # focus group defined on the full data (same median)
                 if mc.sum() >= MIN_N and (~mc).sum() >= MIN_N:
                     within[c] = rate(d.churned[mc]) - rate(d.churned[~mc])
-        dirs = {direction(v) for v in within.values()}
+        signs = {v > 0 for v in within.values()}  # within contract: same sign in every contract type
         wc = ("not_checked" if var == "Contract" or not within else
-              dirs.pop() if len(dirs) == 1 and dirs <= {"higher", "lower"} else "mixed")
+              "higher" if signs == {True} else "lower" if signs == {False} else "mixed")
         rows.append({"variable": var, "focus_group": FOCUS_LABEL.get(var, "Yes"),
                      "churn_focus": rate(df.churned[m]), "churn_rest": rate(df.churned[~m]),
                      "diff_overall": diff, "direction_overall": direction(diff),
@@ -310,9 +319,9 @@ def chart_value(sz, path):
     style(a2)
     a2.set_yticks([])
     a2.set_ylim(0, sz["customers_must_stay"] * 1.15)
-    a2.set_title("Customers kept for 12 months", loc="left", fontsize=9, color=MUTED)
-    f.suptitle(f"Even the high case keeps {saved[2]:,.0f} customers; {sz['customers_must_stay']:,.0f} must stay "
-               "to pay back $2M", x=0.02, ha="left", fontsize=13, color=INK, weight="bold")
+    a2.set_title("Churners avoided over 12 months (estimated from assumptions)", loc="left", fontsize=9, color=MUTED)
+    f.suptitle(f"Even the high case falls short of $2M: an estimated {saved[2]:,.0f} churners avoided, "
+               f"{sz['customers_must_stay']:,.0f} needed", x=0.02, ha="left", fontsize=13, color=INK, weight="bold")
     f.tight_layout()
     f.savefig(path, dpi=200, facecolor=SURFACE)
     plt.close(f)
@@ -370,7 +379,8 @@ def write_findings(rec, counts, drv, path):
             {"column": "TotalCharges", "issue": "Stored as text; blanks are a single space (all tenure 0)",
              "rows_affected": counts["tc_blank"], "action": "Set to 0"},
             {"column": "RetentionOfferAccepted", "issue": "Filled only for churners; leaks the outcome",
-             "rows_affected": counts["raw_rows"], "action": "Column dropped from the analysis"},
+             "rows_affected": counts["leak_filled_churn_yes"] + counts["leak_filled_churn_no"],
+             "action": "Column dropped from the analysis"},
         ],
         "drivers": [{"variable": d["variable"], "direction_overall": d["direction_overall"],
                      "direction_within_contract": d["direction_within_contract"]} for d in drv],
@@ -379,39 +389,53 @@ def write_findings(rec, counts, drv, path):
 
 
 def write_recommendation(R, path):
-    s, s_no, c, tg = R["sizing"], R["sensitivity_dup_keep_no"]["sizing"], R["cleaning"], R["gap_within"]["tenure"]
+    s, s_no, c = R["sizing"], R["sensitivity_dup_keep_no"]["sizing"], R["cleaning"]
+    tg, ty = R["gap_within"]["tenure"], R["gap_within"]["tenure_12m_bins"]
     k = s["cases"]
-    REC = {"do_not_fund": "Do not fund", "fund": "Fund", "test_first": "Test first"}[s["recommendation"]]
-    t0, t3 = tg[TENURE_LABELS[0]], tg[TENURE_LABELS[-1]]
+    be_lo, be_mid, be_hi = (k[x]["break_even_mtm_base"] for x in ("low", "mid", "high"))
+    t0, t3, y6 = tg[TENURE_LABELS[0]], tg[TENURE_LABELS[-1]], ty[YEAR_LABELS[-1]]
+    inet = {g: v["gap"] for g, v in R["gap_within"]["InternetService"].items()}
+    pay = [v["gap"] for v in R["gap_within"]["PaymentMethod"].values()]
     app = next(d for d in R["drivers"] if d["variable"] == "LoyaltyAppUser")
+    be_shift = s_no["cases"]["mid"]["break_even_mtm_base"] / be_mid - 1
     same = s_no["recommendation"] == s["recommendation"]
     lines = [
         "# $2M month-to-month → 1-year campaign: recommendation", "",
         "For: VP of Marketing. Bar: the campaign must return ≥ $2M in retained revenue within 12 months.", "",
-        f"## Recommendation: **{REC}** at the customer base we can see", "",
-        f"In the data we have ({s['n_mtm']:,} month-to-month customers), even the high case returns "
-        f"**{money(k['high']['value_at_file_n'])}**, well under $2M. To pay back $2M, "
-        f"**{s['customers_must_stay']:,.0f} customers must stay** who would otherwise have left. Even if every "
-        f"month-to-month customer who churned ({s['n_mtm_churned']:,}) stayed, that is only "
-        f"{money(s['max_value_if_all_mtm_churners_saved'])}. **This flips only if the real month-to-month base is much larger "
-        f"than this file:** at least {k['high']['break_even_mtm_base']:,.0f} customers (high case), "
-        f"{k['mid']['break_even_mtm_base']:,.0f} (mid) or {k['low']['break_even_mtm_base']:,.0f} (low).", "",
+        f"## Recommendation: **Do not fund, unless the month-to-month base is at least {be_hi:,.0f} customers**", "",
+        f"At the only base we can see ({s['n_mtm']:,} month-to-month customers), even the high case returns "
+        f"**{money(k['high']['value_at_file_n'])}**. To pay back $2M, **{s['customers_must_stay']:,.0f} customers who "
+        f"would have left must stay**. Even if all {s['n_mtm_churned']:,} month-to-month churners stayed, that is only "
+        f"{money(s['max_value_if_all_mtm_churners_saved'])}. The answer depends on the real base size, which is not in the data:", "",
+        f"- **Below {be_hi:,.0f}:** do not fund.",
+        f"- **{be_hi:,.0f} to {be_lo:,.0f}:** test first. Pilot: offer the 1-year contract to {s['pilot_per_group']:,} "
+        f"month-to-month customers and hold out {s['pilot_per_group']:,} more, chosen at random. That is enough to detect the "
+        f"mid case ({pct(s['churn_mtm'])} → {pct(s['pilot_churn_offered_mid_case'])} churn across everyone offered).",
+        f"- **Above {be_lo:,.0f}:** fund. It meets the $2M bar even under the low-case assumptions.", "",
         "## What we found", "",
         f"- Month-to-month customers churn at **{pct(s['churn_mtm'])}** vs **{pct(s['churn_1yr'])}** on one-year "
         f"contracts, a {s['gap'] * 100:.1f}-point gap (chart 1).",
-        f"- The gap is **associated with** tenure: it shrinks from {t0['gap'] * 100:.1f} points for customers with "
-        f"0–12 months' tenure to {t3['gap'] * 100:.1f} points at 49–72 months (chart 2). This suggests part of the "
-        "gap may reflect who chooses each contract rather than the contract itself.",
+        f"- The gap is smaller for longer-tenure customers: {t0['gap'] * 100:.1f} points at 0–12 months, "
+        f"{t3['gap'] * 100:.1f} at 49–72 (chart 2), and {y6['gap'] * 100:.1f} at 61–72. But half the month-to-month "
+        f"customers ({R['mtm_tenure_mix']['0-12']:.0%}) are in their first year, so weighted by their tenure mix the "
+        f"gap is {R['gap_weighted_by_mtm_tenure_mix'] * 100:.1f} points, about the same as the raw gap.",
+        f"- The gap holds within internet types (DSL {inet['DSL'] * 100:.0f}, fiber {inet['Fiber optic'] * 100:.0f}, "
+        f"no internet {inet['No'] * 100:.0f} points) and payment methods ({min(pay) * 100:.0f}–{max(pay) * 100:.0f} points).",
         f"- A month-to-month churner pays **${s['avg_monthly_charge_mtm_churners']:.2f}/month** on average, "
-        f"so each customer kept is worth **${s['value_per_saved_customer_12m']:,.0f}** over 12 months.",
-        f"- Customers kept: low {k['low']['saved_customers_at_file_n']:,.0f}, mid {k['mid']['saved_customers_at_file_n']:,.0f}, "
-        f"high {k['high']['saved_customers_at_file_n']:,.0f}, against {s['customers_must_stay']:,.0f} needed (chart 3).",
-        f"- Loyalty app users churn more overall ({pct(app['churn_focus'])} vs {pct(app['churn_rest'])}) but **less** "
-        f"within every contract type (month-to-month: {app['diff_within_contract']['Month-to-month'] * 100:+.1f} points), "
-        f"a reversal that reflects contract mix: {R['loyalty_app_share_mtm']['Yes']:.0%} of them are month-to-month vs "
-        f"{R['loyalty_app_share_mtm']['No']:.0%} of non-users. Compare within contract before using it for targeting.", "",
+        f"so each churner avoided is worth **${s['value_per_saved_customer_12m']:,.0f}** over 12 months.",
+        f"- Loyalty app users churn more overall ({pct(app['churn_focus'])} vs {pct(app['churn_rest'])}) but less within "
+        f"every contract type. The reversal lines up with contract mix: {R['loyalty_app_share_mtm']['Yes']:.0%} of users "
+        f"are month-to-month vs {R['loyalty_app_share_mtm']['No']:.0%} of non-users.", "",
+        "## How sure we are", "",
+        "- **Sure:** at this file's scale the answer is no. Even avoiding every month-to-month churner falls short of $2M.",
+        "- **Not sure:** the base size, the take-up and how much of the gap a contract switch would really change. The data "
+        "cannot separate who chooses a 1-year contract from what the contract does. Tenure does not narrow the gap on "
+        "average, so the data does not favor the low or the high case.",
+        f"- **The duplicate choice barely matters:** keeping the Churn=No copies gives {pct(s_no['churn_mtm'])} vs "
+        f"{pct(s_no['churn_1yr'])} and moves the break-even bases by {be_shift:+.0%}. "
+        f"Recommendation {'unchanged' if same else 'CHANGES to ' + s_no['recommendation']}.", "",
         "## Value range (12-month retained revenue)", "",
-        "| Case | Take-up | Share of gap that's real | Customers kept | Value (this file) | Per 1,000 MTM customers | MTM base to break even |",
+        "| Case | Take-up | Share of gap that's real | Churners avoided | Value (this file) | Per 1,000 MTM customers | MTM base to break even |",
         "|---|---|---|---|---|---|---|"]
     for name in ("low", "mid", "high"):
         v = k[name]
@@ -420,34 +444,25 @@ def write_recommendation(R, path):
                      f"${v['value_per_1000_mtm']:,.0f} | {v['break_even_mtm_base']:,.0f} |")
     lines += [
         "", "Formula: MTM customers × take-up × churn gap × share real × avg monthly charge of MTM churners × 12. "
-        "Assumptions are from the brief; none are measured. A kept customer is counted as paying for 12 full "
-        "months, and the $2M already includes the discount.", "",
-        "## How sure we are", "",
-        f"- **Sure:** at this file's scale the answer is no. Even keeping every month-to-month churner falls short of $2M.",
-        "- **Not sure:** the real size of the base, the take-up rate and how much of the gap is real. None of these is "
-        "in the data. The tenure pattern suggests the low case is the more likely one.",
-        f"- **Duplicate choice doesn't matter:** keeping the Churn=No row instead gives a {pct(s_no['churn_mtm'])} vs "
-        f"{pct(s_no['churn_1yr'])} gap and a high case of {money(s_no['cases']['high']['value_at_file_n'])}. "
-        f"Recommendation {'unchanged' if same else 'CHANGES to ' + s_no['recommendation']}.", "",
+        "Assumptions (none measured): take-up and share real are from the brief; each churner avoided pays for 12 full "
+        "months; the $2M includes the discount; the Churn flag (left in the last month) is treated as a one-time "
+        "difference, not a monthly rate repeated for 12 months.", "",
         "## Data issues", "",
         f"- {c['dup_ids']} customer IDs appeared twice, with the pairs disagreeing on Churn. We kept the Churn=Yes row "
         f"(your decision) and removed {c['dup_removed']} rows.",
         f"- {c['mc_high']} MonthlyCharges values looked ×100: {c['mc_fixed']} were divided by 100 and "
-        f"{c['mc_removed']} removed. A further {c['mc_inconsistent']} normal-range values don't match "
-        "TotalCharges ÷ tenure; they were flagged and left unchanged.",
-        f"- {c['tc_blank']} blank TotalCharges (new customers) were set to 0. RetentionOfferAccepted leaks the outcome "
-        "and was dropped.",
-        f"- In total {c['removed_rows']} of {c['raw_rows']:,} rows were removed ({c['removed_share']:.1%}). See `cleaning_log.md`.", "",
+        f"{c['mc_removed']} removed. Another {c['mc_inconsistent']} don't match TotalCharges ÷ tenure; they were flagged "
+        f"and left as is. {c['tc_blank']} blank TotalCharges (new customers) were set to 0. RetentionOfferAccepted "
+        "leaks the outcome and was dropped.",
+        f"- {c['removed_rows']} of {c['raw_rows']:,} rows removed ({c['removed_share']:.1%}). See `cleaning_log.md`.", "",
         "## Risks", "",
-        "- **Base size:** if the file is a sample, the answer could change to test_first or fund. This is the "
-        "biggest risk to this recommendation.",
-        "- The 1-year gap comes from observational data. Customers moved over by a discount may churn more than those "
-        "who chose a 1-year contract, and those who would have stayed anyway may take the discount too.",
-        "- Customers who take a 1-year contract can still leave when it ends, so value beyond 12 months is not counted.", "",
+        "- **Base size** is the biggest risk: it alone decides between do not fund, test first and fund.",
+        "- The gap comes from observational data. Customers moved over by a discount may churn more than those who chose "
+        "a 1-year contract, and customers who would have stayed anyway may take the discount too.",
+        "- Customers can leave when the 1-year contract ends; value beyond 12 months is not counted.", "",
         "## Next step", "",
-        f"**Give us the real number of month-to-month customers.** If it is below {k['high']['break_even_mtm_base']:,.0f}, "
-        f"do not fund. If it is above {k['low']['break_even_mtm_base']:,.0f}, the campaign pays back even in the low "
-        "case. Between the two, run a small pilot to measure take-up and the real churn change before committing $2M.",
+        f"**Give us the real number of month-to-month customers.** We then apply the ranges above. If it is between "
+        f"{be_hi:,.0f} and {be_lo:,.0f}, run the pilot before committing $2M.",
     ]
     path.write_text("\n".join(lines) + "\n")
 
@@ -472,6 +487,12 @@ def main():
     gaps["tenure"] = gaps.pop("tenure_group")
     if min(g["gap"] for g in gaps["tenure"].values()) < 0.10:
         raise SystemExit("STOP: MTM vs 1-year gap < 10 points in a tenure group. Ask the user.")
+    # Disclosed, not a stop (user decision): with 12-month bins the oldest group's gap falls below 10 points
+    df["tenure_year"] = pd.cut(df.tenure, YEAR_BINS, labels=YEAR_LABELS)
+    gaps["tenure_12m_bins"] = gap_within(df, "tenure_year")
+    mtm_mix = df[df.Contract == "Month-to-month"].tenure_group.value_counts(normalize=True)
+    weighted_gap = float(sum(gaps["tenure"][k]["gap"] * mtm_mix[k] for k in TENURE_LABELS))
+    mtm_share_61_72 = float(df[df.Contract == "Month-to-month"].tenure_year.eq("61-72").mean())
     drv = drivers(df)
     churn_by_contract = {k: {"customers": int(v.size), "churned": int(v.sum()), "churn_rate": float(v.mean())}
                          for k, v in df.groupby("Contract").churned}
@@ -479,12 +500,14 @@ def main():
     R = {"dup_keep": dup_keep, "profile_raw": profile(raw), "cleaning": counts,
          "overall_churn_rate": rate(df.churned), "churn_by_contract": churn_by_contract,
          "sizing": sz, "gap_within": gaps, "drivers": drv,
+         "mtm_tenure_mix": {k: float(v) for k, v in mtm_mix.items()},
+         "gap_weighted_by_mtm_tenure_mix": weighted_gap, "mtm_share_tenure_61_72": mtm_share_61_72,
          "loyalty_app_share_mtm": {k: float(v) for k, v in
                                    df.groupby("LoyaltyAppUser").Contract.apply(lambda s: s.eq("Month-to-month").mean()).items()},
          f"sensitivity_dup_keep_{other}": {"cleaning": counts_o, "sizing": sz_o}}
 
     OUT.mkdir(parents=True, exist_ok=True)
-    df.drop(columns=["churned", "tenure_group"]).to_csv(OUT / "clean.csv", index=False)
+    df.drop(columns=["churned", "tenure_group", "tenure_year"]).to_csv(OUT / "clean.csv", index=False)
     write_cleaning_log(log, counts, dup_keep, OUT / "cleaning_log.md")
     write_findings(sz["recommendation"], counts, drv, OUT / "findings.json")
     (OUT / "results.json").write_text(json.dumps(R, indent=2) + "\n")

@@ -28,7 +28,7 @@
     {
       "column": "RetentionOfferAccepted",
       "issue": "Filled only for churners; leaks the outcome",
-      "rows_affected": 7254,
+      "rows_affected": 2033,
       "action": "Column dropped from the analysis"
     }
   ],
@@ -61,7 +61,7 @@
     {
       "variable": "PhoneService",
       "direction_overall": "higher",
-      "direction_within_contract": "mixed"
+      "direction_within_contract": "higher"
     },
     {
       "variable": "MultipleLines",
@@ -81,12 +81,12 @@
     {
       "variable": "OnlineBackup",
       "direction_overall": "higher",
-      "direction_within_contract": "mixed"
+      "direction_within_contract": "higher"
     },
     {
       "variable": "DeviceProtection",
       "direction_overall": "higher",
-      "direction_within_contract": "mixed"
+      "direction_within_contract": "higher"
     },
     {
       "variable": "TechSupport",
@@ -111,7 +111,7 @@
     {
       "variable": "PaperlessBilling",
       "direction_overall": "higher",
-      "direction_within_contract": "mixed"
+      "direction_within_contract": "higher"
     },
     {
       "variable": "PaymentMethod",
