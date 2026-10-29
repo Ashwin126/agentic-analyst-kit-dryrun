@@ -1,0 +1,991 @@
+{
+  "profile": {
+    "rows": 7254,
+    "unique_customer_ids": 7043,
+    "ids_appearing_twice": 211,
+    "column_types": {
+      "customerID": "text",
+      "gender": "text",
+      "SeniorCitizen": "number",
+      "Partner": "text",
+      "Dependents": "text",
+      "tenure": "number",
+      "PhoneService": "text",
+      "MultipleLines": "text",
+      "InternetService": "text",
+      "OnlineSecurity": "text",
+      "OnlineBackup": "text",
+      "DeviceProtection": "text",
+      "TechSupport": "text",
+      "StreamingTV": "text",
+      "StreamingMovies": "text",
+      "Contract": "text",
+      "PaperlessBilling": "text",
+      "PaymentMethod": "text",
+      "MonthlyCharges": "number",
+      "TotalCharges": "number",
+      "Churn": "text",
+      "LoyaltyAppUser": "text",
+      "RetentionOfferAccepted": "text"
+    },
+    "numeric_min_max": {
+      "SeniorCitizen": {
+        "min": 0.0,
+        "max": 1.0
+      },
+      "tenure": {
+        "min": 0.0,
+        "max": 72.0
+      },
+      "MonthlyCharges": {
+        "min": 18.25,
+        "max": 11515.0
+      },
+      "TotalCharges": {
+        "min": 18.8,
+        "max": 8684.8
+      }
+    },
+    "inconsistent_category_columns": [],
+    "blank_or_whitespace_per_column": {
+      "customerID": 0,
+      "gender": 0,
+      "SeniorCitizen": 0,
+      "Partner": 0,
+      "Dependents": 0,
+      "tenure": 0,
+      "PhoneService": 0,
+      "MultipleLines": 0,
+      "InternetService": 0,
+      "OnlineSecurity": 0,
+      "OnlineBackup": 0,
+      "DeviceProtection": 0,
+      "TechSupport": 0,
+      "StreamingTV": 0,
+      "StreamingMovies": 0,
+      "Contract": 0,
+      "PaperlessBilling": 0,
+      "PaymentMethod": 0,
+      "MonthlyCharges": 0,
+      "TotalCharges": 11,
+      "Churn": 0,
+      "LoyaltyAppUser": 0,
+      "RetentionOfferAccepted": 5221
+    }
+  },
+  "scenarios": {
+    "keep_churn_No__with_outlier_charges": {
+      "mtm_customers": 3875,
+      "mtm_churn": 0.4170322580645161,
+      "one_year_churn": 0.10930074677528853,
+      "avg_mtm_monthly_charge": 243.6365935483871,
+      "gap": 0.3077315112892276,
+      "breakeven_conversion": {
+        "low": 2.294682194224801,
+        "mid": 1.1473410971124005,
+        "high": 0.5736705485562003
+      },
+      "retained_revenue": {
+        "low": 43579.01946146509,
+        "mid": 217895.09730732543,
+        "high": 697264.3113834414
+      },
+      "max_retained_at_100pct_conversion_full_gap": 3486321.556917207,
+      "base_needed_mid": 35567.57401048441,
+      "grid": {
+        "5%": {
+          "25%": 43579.01946146509,
+          "50%": 87158.03892293018,
+          "100%": 174316.07784586036
+        },
+        "10%": {
+          "25%": 87158.03892293018,
+          "50%": 174316.07784586036,
+          "100%": 348632.1556917207
+        },
+        "12.5%": {
+          "25%": 108947.54865366271,
+          "50%": 217895.09730732543,
+          "100%": 435790.19461465086
+        },
+        "15%": {
+          "25%": 130737.05838439526,
+          "50%": 261474.11676879053,
+          "100%": 522948.23353758105
+        },
+        "20%": {
+          "25%": 174316.07784586036,
+          "50%": 348632.1556917207,
+          "100%": 697264.3113834414
+        }
+      },
+      "recommendation": "do_not_fund"
+    },
+    "keep_churn_No__without_outlier_charges": {
+      "mtm_customers": 3875,
+      "mtm_churn": 0.4170322580645161,
+      "one_year_churn": 0.10930074677528853,
+      "avg_mtm_monthly_charge": 66.44288747346071,
+      "gap": 0.3077315112892276,
+      "breakeven_conversion": {
+        "low": 8.414272382433376,
+        "mid": 4.207136191216688,
+        "high": 2.103568095608344
+      },
+      "retained_revenue": {
+        "low": 11884.568915165113,
+        "mid": 59422.84457582557,
+        "high": 190153.1026426418
+      },
+      "max_retained_at_100pct_conversion_full_gap": 950765.5132132091,
+      "base_needed_mid": 130421.22192771733,
+      "grid": {
+        "5%": {
+          "25%": 11884.568915165113,
+          "50%": 23769.137830330226,
+          "100%": 47538.27566066045
+        },
+        "10%": {
+          "25%": 23769.137830330226,
+          "50%": 47538.27566066045,
+          "100%": 95076.5513213209
+        },
+        "12.5%": {
+          "25%": 29711.422287912785,
+          "50%": 59422.84457582557,
+          "100%": 118845.68915165114
+        },
+        "15%": {
+          "25%": 35653.70674549534,
+          "50%": 71307.41349099069,
+          "100%": 142614.82698198137
+        },
+        "20%": {
+          "25%": 47538.27566066045,
+          "50%": 95076.5513213209,
+          "100%": 190153.1026426418
+        }
+      },
+      "recommendation": "do_not_fund"
+    },
+    "keep_churn_Yes__with_outlier_charges": {
+      "mtm_customers": 3875,
+      "mtm_churn": 0.4433548387096774,
+      "one_year_churn": 0.1452817379497624,
+      "avg_mtm_monthly_charge": 243.63659354838708,
+      "gap": 0.298073100759915,
+      "breakeven_conversion": {
+        "low": 2.3690363798578695,
+        "mid": 1.1845181899289348,
+        "high": 0.5922590949644674
+      },
+      "retained_revenue": {
+        "low": 42211.255534201424,
+        "mid": 211056.27767100712,
+        "high": 675380.0885472228
+      },
+      "max_retained_at_100pct_conversion_full_gap": 3376900.442736114,
+      "base_needed_mid": 36720.063887796976,
+      "grid": {
+        "5%": {
+          "25%": 42211.255534201424,
+          "50%": 84422.51106840285,
+          "100%": 168845.0221368057
+        },
+        "10%": {
+          "25%": 84422.51106840285,
+          "50%": 168845.0221368057,
+          "100%": 337690.0442736114
+        },
+        "12.5%": {
+          "25%": 105528.13883550356,
+          "50%": 211056.27767100712,
+          "100%": 422112.55534201424
+        },
+        "15%": {
+          "25%": 126633.76660260427,
+          "50%": 253267.53320520854,
+          "100%": 506535.0664104171
+        },
+        "20%": {
+          "25%": 168845.0221368057,
+          "50%": 337690.0442736114,
+          "100%": 675380.0885472228
+        }
+      },
+      "recommendation": "do_not_fund"
+    },
+    "keep_churn_Yes__without_outlier_charges": {
+      "mtm_customers": 3875,
+      "mtm_churn": 0.4433548387096774,
+      "one_year_churn": 0.1452817379497624,
+      "avg_mtm_monthly_charge": 66.44288747346071,
+      "gap": 0.298073100759915,
+      "breakeven_conversion": {
+        "low": 8.686918578174657,
+        "mid": 4.3434592890873285,
+        "high": 2.1717296445436642
+      },
+      "retained_revenue": {
+        "low": 11511.56179260662,
+        "mid": 57557.8089630331,
+        "high": 184184.98868170593
+      },
+      "max_retained_at_100pct_conversion_full_gap": 920924.9434085296,
+      "base_needed_mid": 134647.23796170717,
+      "grid": {
+        "5%": {
+          "25%": 11511.56179260662,
+          "50%": 23023.12358521324,
+          "100%": 46046.24717042648
+        },
+        "10%": {
+          "25%": 23023.12358521324,
+          "50%": 46046.24717042648,
+          "100%": 92092.49434085297
+        },
+        "12.5%": {
+          "25%": 28778.90448151655,
+          "50%": 57557.8089630331,
+          "100%": 115115.6179260662
+        },
+        "15%": {
+          "25%": 34534.68537781986,
+          "50%": 69069.37075563971,
+          "100%": 138138.74151127943
+        },
+        "20%": {
+          "25%": 46046.24717042648,
+          "50%": 92092.49434085297,
+          "100%": 184184.98868170593
+        }
+      },
+      "recommendation": "do_not_fund"
+    }
+  },
+  "headline_scenario": "keep_churn_No__without_outlier_charges",
+  "outliers": {
+    "count": 200,
+    "mtm_count": 107,
+    "share_within_20pct_of_TotalCharges_over_tenure_after_div100": 0.985
+  },
+  "confounding": {
+    "raw_gap": 0.3077315112892276,
+    "adjusted": {
+      "tenure | weighted by Month-to-month mix": {
+        "gap": 0.31520305999937126,
+        "share_of_weight_used": 1.0
+      },
+      "tenure | weighted by One year mix": {
+        "gap": 0.20632670875069353,
+        "share_of_weight_used": 1.0
+      },
+      "tenure + internet + payment | weighted by Month-to-month mix": {
+        "gap": 0.1604835637876116,
+        "share_of_weight_used": 0.5855483870967741
+      },
+      "tenure + internet + payment | weighted by One year mix": {
+        "gap": 0.09367881592510154,
+        "share_of_weight_used": 0.8723693143245078
+      }
+    },
+    "adjusted_min": 0.09367881592510154,
+    "adjusted_max": 0.31520305999937126,
+    "mtm_share_in_0_12": 0.5145806451612903,
+    "within": {
+      "tenure_group": [
+        {
+          "group": "0-12",
+          "mtm_n": 1994,
+          "one_year_n": 124,
+          "mtm_churn": 0.5005015045135406,
+          "one_year_churn": 0.10483870967741936,
+          "gap": 0.3956627948361212
+        },
+        {
+          "group": "13-24",
+          "mtm_n": 737,
+          "one_year_n": 197,
+          "mtm_churn": 0.3677069199457259,
+          "one_year_churn": 0.08121827411167512,
+          "gap": 0.28648864583405076
+        },
+        {
+          "group": "25-48",
+          "mtm_n": 802,
+          "one_year_n": 518,
+          "mtm_churn": 0.3229426433915212,
+          "one_year_churn": 0.10424710424710425,
+          "gap": 0.21869553914441692
+        },
+        {
+          "group": "49-72",
+          "mtm_n": 342,
+          "one_year_n": 634,
+          "mtm_churn": 0.2573099415204678,
+          "one_year_churn": 0.12302839116719243,
+          "gap": 0.13428155035327538
+        }
+      ],
+      "InternetService": [
+        {
+          "group": "DSL",
+          "mtm_n": 1223,
+          "one_year_n": 570,
+          "mtm_churn": 0.3131643499591169,
+          "one_year_churn": 0.0912280701754386,
+          "gap": 0.2219362797836783
+        },
+        {
+          "group": "Fiber optic",
+          "mtm_n": 2128,
+          "one_year_n": 539,
+          "mtm_churn": 0.5338345864661654,
+          "one_year_churn": 0.18552875695732837,
+          "gap": 0.34830582950883704
+        },
+        {
+          "group": "No",
+          "mtm_n": 524,
+          "one_year_n": 364,
+          "mtm_churn": 0.1851145038167939,
+          "one_year_churn": 0.024725274725274724,
+          "gap": 0.16038922909151918
+        }
+      ],
+      "PaymentMethod": [
+        {
+          "group": "Bank transfer (automatic)",
+          "mtm_n": 589,
+          "one_year_n": 391,
+          "mtm_churn": 0.33276740237691,
+          "one_year_churn": 0.09207161125319693,
+          "gap": 0.24069579112371306
+        },
+        {
+          "group": "Credit card (automatic)",
+          "mtm_n": 543,
+          "one_year_n": 398,
+          "mtm_churn": 0.32044198895027626,
+          "one_year_churn": 0.10301507537688442,
+          "gap": 0.21742691357339183
+        },
+        {
+          "group": "Electronic check",
+          "mtm_n": 1850,
+          "one_year_n": 347,
+          "mtm_churn": 0.5259459459459459,
+          "one_year_churn": 0.1786743515850144,
+          "gap": 0.34727159436093147
+        },
+        {
+          "group": "Mailed check",
+          "mtm_n": 893,
+          "one_year_n": 337,
+          "mtm_churn": 0.3057110862262038,
+          "one_year_churn": 0.06528189910979229,
+          "gap": 0.2404291871164115
+        }
+      ]
+    }
+  },
+  "segments": [
+    {
+      "segment": "Monthly charge $70.45\u2013$89.90",
+      "column": "charge_band",
+      "level": "Q3",
+      "mtm_n": 1146,
+      "mtm_churn": 0.5209424083769634,
+      "one_year_churn_same_segment": 0.11155378486055777,
+      "gap": 0.4093886235164056,
+      "avg_monthly_charge": 80.39267015706807,
+      "revenue_kept_per_converted_customer_mid": 197.4710674584631,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 8.837753907657243
+    },
+    {
+      "segment": "Senior citizens",
+      "column": "SeniorCitizen",
+      "level": "1",
+      "mtm_n": 807,
+      "mtm_churn": 0.540272614622057,
+      "one_year_churn_same_segment": 0.15263157894736842,
+      "gap": 0.38764103567468855,
+      "avg_monthly_charge": 78.98223350253807,
+      "revenue_kept_per_converted_customer_mid": 183.70052876894363,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 13.491059402936907
+    },
+    {
+      "segment": "Fiber optic internet",
+      "column": "InternetService",
+      "level": "Fiber optic",
+      "mtm_n": 2128,
+      "mtm_churn": 0.5338345864661654,
+      "one_year_churn_same_segment": 0.18552875695732837,
+      "gap": 0.34830582950883704,
+      "avg_monthly_charge": 87.03947495183044,
+      "revenue_kept_per_converted_customer_mid": 181.89813913866567,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 5.16690070888344
+    },
+    {
+      "segment": "Monthly charge $89.95\u2013$118.75",
+      "column": "charge_band",
+      "level": "Q4",
+      "mtm_n": 843,
+      "mtm_churn": 0.505338078291815,
+      "one_year_churn_same_segment": 0.2018348623853211,
+      "gap": 0.3035032159064939,
+      "avg_monthly_charge": 98.41714116251484,
+      "revenue_kept_per_converted_customer_mid": 179.21951305887976,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 13.237840011467961
+    },
+    {
+      "segment": "Pays by electronic check",
+      "column": "PaymentMethod",
+      "level": "Electronic check",
+      "mtm_n": 1850,
+      "mtm_churn": 0.5259459459459459,
+      "one_year_churn_same_segment": 0.1786743515850144,
+      "gap": 0.34727159436093147,
+      "avg_monthly_charge": 74.9330105146652,
+      "revenue_kept_per_converted_customer_mid": 156.13263619015333,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 6.924119821844529
+    },
+    {
+      "segment": "No tech support",
+      "column": "TechSupport",
+      "level": "No",
+      "mtm_n": 2680,
+      "mtm_churn": 0.49216417910447763,
+      "one_year_churn_same_segment": 0.1400359066427289,
+      "gap": 0.3521282724617487,
+      "avg_monthly_charge": 72.99925143953935,
+      "revenue_kept_per_converted_customer_mid": 154.23060180243488,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 4.838654897245148
+    },
+    {
+      "segment": "No online security",
+      "column": "OnlineSecurity",
+      "level": "No",
+      "mtm_n": 2631,
+      "mtm_churn": 0.4982896237172178,
+      "one_year_churn_same_segment": 0.1687612208258528,
+      "gap": 0.329528402891365,
+      "avg_monthly_charge": 73.55281359906215,
+      "revenue_kept_per_converted_customer_mid": 145.42644716079133,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 5.227159513507281
+    },
+    {
+      "segment": "PaperlessBilling = Yes",
+      "column": "PaperlessBilling",
+      "level": "Yes",
+      "mtm_n": 2586,
+      "mtm_churn": 0.47138437741686,
+      "one_year_churn_same_segment": 0.1425,
+      "gap": 0.32888437741686005,
+      "avg_monthly_charge": 72.69871031746031,
+      "revenue_kept_per_converted_customer_mid": 143.45682049059957,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 5.391135829616469
+    },
+    {
+      "segment": "Tenure 0-12 months",
+      "column": "tenure_group",
+      "level": "0-12",
+      "mtm_n": 1994,
+      "mtm_churn": 0.5005015045135406,
+      "one_year_churn_same_segment": 0.10483870967741936,
+      "gap": 0.3956627948361212,
+      "avg_monthly_charge": 58.26337299534403,
+      "revenue_kept_per_converted_customer_mid": 138.31589397550326,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 7.25158185550884
+    },
+    {
+      "segment": "Dependents = No",
+      "column": "Dependents",
+      "level": "No",
+      "mtm_n": 3086,
+      "mtm_churn": 0.44134802333117307,
+      "one_year_churn_same_segment": 0.11889596602972399,
+      "gap": 0.3224520573014491,
+      "avg_monthly_charge": 67.57844251336898,
+      "revenue_kept_per_converted_customer_mid": 130.74484690598126,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 4.956892415447005
+    },
+    {
+      "segment": "Partner = No",
+      "column": "Partner",
+      "level": "No",
+      "mtm_n": 2495,
+      "mtm_churn": 0.43967935871743485,
+      "one_year_churn_same_segment": 0.09953343701399689,
+      "gap": 0.34014592170343794,
+      "avg_monthly_charge": 63.5923522116577,
+      "revenue_kept_per_converted_customer_mid": 129.7840755379438,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 6.176437310126451
+    },
+    {
+      "segment": "Tenure 13-24 months",
+      "column": "tenure_group",
+      "level": "13-24",
+      "mtm_n": 737,
+      "mtm_churn": 0.3677069199457259,
+      "one_year_churn_same_segment": 0.08121827411167512,
+      "gap": 0.28648864583405076,
+      "avg_monthly_charge": 69.22829403606103,
+      "revenue_kept_per_converted_customer_mid": 118.99872127075571,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 22.804482075627316
+    },
+    {
+      "segment": "Partner = Yes",
+      "column": "Partner",
+      "level": "Yes",
+      "mtm_n": 1380,
+      "mtm_churn": 0.3760869565217391,
+      "one_year_churn_same_segment": 0.11686746987951807,
+      "gap": 0.25921948664222105,
+      "avg_monthly_charge": 71.55441067457376,
+      "revenue_kept_per_converted_customer_mid": 111.28978561229803,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 13.022537102979998
+    },
+    {
+      "segment": "Not senior citizens",
+      "column": "SeniorCitizen",
+      "level": "0",
+      "mtm_n": 3068,
+      "mtm_churn": 0.38461538461538464,
+      "one_year_churn_same_segment": 0.10288386593920498,
+      "gap": 0.2817315186761796,
+      "avg_monthly_charge": 63.127114093959726,
+      "revenue_kept_per_converted_customer_mid": 106.70938634001442,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 6.109026626034563
+    },
+    {
+      "segment": "Pays by bank transfer (automatic)",
+      "column": "PaymentMethod",
+      "level": "Bank transfer (automatic)",
+      "mtm_n": 589,
+      "mtm_churn": 0.33276740237691,
+      "one_year_churn_same_segment": 0.09207161125319693,
+      "gap": 0.24069579112371306,
+      "avg_monthly_charge": 69.3756590509666,
+      "revenue_kept_per_converted_customer_mid": 100.19057484000834,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 33.89126915343303
+    },
+    {
+      "segment": "Tenure 25-48 months",
+      "column": "tenure_group",
+      "level": "25-48",
+      "mtm_n": 802,
+      "mtm_churn": 0.3229426433915212,
+      "one_year_churn_same_segment": 0.10424710424710425,
+      "gap": 0.21869553914441692,
+      "avg_monthly_charge": 76.06536491677336,
+      "revenue_kept_per_converted_customer_mid": 99.81093594414341,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 24.984893312998125
+    },
+    {
+      "segment": "Pays by credit card (automatic)",
+      "column": "PaymentMethod",
+      "level": "Credit card (automatic)",
+      "mtm_n": 543,
+      "mtm_churn": 0.32044198895027626,
+      "one_year_churn_same_segment": 0.10301507537688442,
+      "gap": 0.21742691357339183,
+      "avg_monthly_charge": 67.65522813688213,
+      "revenue_kept_per_converted_customer_mid": 88.26040464543587,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 41.73152465251578
+    },
+    {
+      "segment": "Monthly charge $35.55\u2013$70.40",
+      "column": "charge_band",
+      "level": "Q2",
+      "mtm_n": 1074,
+      "mtm_churn": 0.34823091247672255,
+      "one_year_churn_same_segment": 0.08839779005524862,
+      "gap": 0.25983312242147394,
+      "avg_monthly_charge": 55.08482309124767,
+      "revenue_kept_per_converted_customer_mid": 85.87716949100034,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 21.68442909752402
+    },
+    {
+      "segment": "Dependents = Yes",
+      "column": "Dependents",
+      "level": "Yes",
+      "mtm_n": 789,
+      "mtm_churn": 0.32192648922686945,
+      "one_year_churn_same_segment": 0.09227871939736347,
+      "gap": 0.22964776982950597,
+      "avg_monthly_charge": 62.0645618556701,
+      "revenue_kept_per_converted_customer_mid": 85.51792929360037,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 29.641202339899902
+    },
+    {
+      "segment": "Has online security",
+      "column": "OnlineSecurity",
+      "level": "Yes",
+      "mtm_n": 720,
+      "mtm_churn": 0.28888888888888886,
+      "one_year_churn_same_segment": 0.10507246376811594,
+      "gap": 0.18381642512077292,
+      "avg_monthly_charge": 74.06797994269341,
+      "revenue_kept_per_converted_customer_mid": 81.68946773389808,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 34.00411160501544
+    },
+    {
+      "segment": "PaperlessBilling = No",
+      "column": "PaperlessBilling",
+      "level": "No",
+      "mtm_n": 1289,
+      "mtm_churn": 0.30799069045771915,
+      "one_year_churn_same_segment": 0.06983655274888559,
+      "gap": 0.23815413770883356,
+      "avg_monthly_charge": 53.8109375,
+      "revenue_kept_per_converted_customer_mid": 76.89178451769862,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 20.178883737345238
+    },
+    {
+      "segment": "Has tech support",
+      "column": "TechSupport",
+      "level": "Yes",
+      "mtm_n": 671,
+      "mtm_churn": 0.29806259314456035,
+      "one_year_churn_same_segment": 0.13405797101449277,
+      "gap": 0.16400462213006758,
+      "avg_monthly_charge": 76.31602760736197,
+      "revenue_kept_per_converted_customer_mid": 75.09708762127923,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 39.69029992850248
+    },
+    {
+      "segment": "Tenure 49-72 months",
+      "column": "tenure_group",
+      "level": "49-72",
+      "mtm_n": 342,
+      "mtm_churn": 0.2573099415204678,
+      "one_year_churn_same_segment": 0.12302839116719243,
+      "gap": 0.13428155035327538,
+      "avg_monthly_charge": 85.32447447447446,
+      "revenue_kept_per_converted_customer_mid": 68.74501629306542,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 85.06730424564864
+    },
+    {
+      "segment": "DSL internet",
+      "column": "InternetService",
+      "level": "DSL",
+      "mtm_n": 1223,
+      "mtm_churn": 0.3131643499591169,
+      "one_year_churn_same_segment": 0.0912280701754386,
+      "gap": 0.2219362797836783,
+      "avg_monthly_charge": 50.15,
+      "revenue_kept_per_converted_customer_mid": 66.7806265869088,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 24.487984912204972
+    },
+    {
+      "segment": "Pays by mailed check",
+      "column": "PaymentMethod",
+      "level": "Mailed check",
+      "mtm_n": 893,
+      "mtm_churn": 0.3057110862262038,
+      "one_year_churn_same_segment": 0.06528189910979229,
+      "gap": 0.2404291871164115,
+      "avg_monthly_charge": 46.06403002309469,
+      "revenue_kept_per_converted_customer_mid": 66.45082376255178,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 33.7037455748889
+    },
+    {
+      "segment": "Monthly charge $18.25\u2013$35.50",
+      "column": "charge_band",
+      "level": "Q1",
+      "mtm_n": 705,
+      "mtm_churn": 0.2453900709219858,
+      "one_year_churn_same_segment": 0.029177718832891247,
+      "gap": 0.21621235208909456,
+      "avg_monthly_charge": 22.83695035460993,
+      "revenue_kept_per_converted_customer_mid": 29.625784504272566,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 95.75710753634169
+    },
+    {
+      "segment": "No internet service",
+      "column": "InternetService",
+      "level": "No",
+      "mtm_n": 524,
+      "mtm_churn": 0.1851145038167939,
+      "one_year_churn_same_segment": 0.024725274725274724,
+      "gap": 0.16038922909151918,
+      "avg_monthly_charge": 20.42211350293542,
+      "revenue_kept_per_converted_customer_mid": 19.6529222469319,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 194.20999305717123
+    },
+    {
+      "segment": "No internet service",
+      "column": "TechSupport",
+      "level": "No internet service",
+      "mtm_n": 524,
+      "mtm_churn": 0.1851145038167939,
+      "one_year_churn_same_segment": 0.024725274725274724,
+      "gap": 0.16038922909151918,
+      "avg_monthly_charge": 20.42211350293542,
+      "revenue_kept_per_converted_customer_mid": 19.6529222469319,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 194.20999305717123
+    },
+    {
+      "segment": "No internet service",
+      "column": "OnlineSecurity",
+      "level": "No internet service",
+      "mtm_n": 524,
+      "mtm_churn": 0.1851145038167939,
+      "one_year_churn_same_segment": 0.024725274725274724,
+      "gap": 0.16038922909151918,
+      "avg_monthly_charge": 20.42211350293542,
+      "revenue_kept_per_converted_customer_mid": 19.6529222469319,
+      "breakeven_conversion_if_all_2M_spent_here_mid": 194.20999305717123
+    }
+  ],
+  "drivers": [
+    {
+      "variable": "gender",
+      "direction_overall": "none",
+      "direction_within_contract": "mixed",
+      "_group": "Female",
+      "_diff_overall": 0.010034323023522862,
+      "_diff_within_contract": {
+        "Month-to-month": 0.023962703962703946,
+        "One year": -0.014884982198527921,
+        "Two year": -0.003383223111729901
+      }
+    },
+    {
+      "variable": "SeniorCitizen",
+      "direction_overall": "higher",
+      "direction_within_contract": "mixed",
+      "_group": "1",
+      "_diff_overall": 0.18349007900646716,
+      "_diff_within_contract": {
+        "Month-to-month": 0.15565723000667236,
+        "One year": 0.04974771300816344,
+        "Two year": 0.01621802002224694
+      }
+    },
+    {
+      "variable": "Partner",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed",
+      "_group": "Yes",
+      "_diff_overall": -0.13366848361813113,
+      "_diff_within_contract": {
+        "Month-to-month": -0.06359240219569573,
+        "One year": 0.01733403286552118,
+        "Two year": -0.007480286068821965
+      }
+    },
+    {
+      "variable": "Dependents",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed",
+      "_group": "Yes",
+      "_diff_overall": -0.1528212646621121,
+      "_diff_within_contract": {
+        "Month-to-month": -0.11942153410430362,
+        "One year": -0.026617246632360522,
+        "Two year": -0.009420239177564866
+      }
+    },
+    {
+      "variable": "tenure",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed",
+      "_group": "above median",
+      "_diff_overall": -0.2571599003960575,
+      "_diff_within_contract": {
+        "Month-to-month": -0.15490462055216436,
+        "One year": 0.039104573587332214,
+        "Two year": 0.02387793135580059
+      }
+    },
+    {
+      "variable": "PhoneService",
+      "direction_overall": "none",
+      "direction_within_contract": "mixed",
+      "_group": "Yes",
+      "_diff_overall": 0.016934665559602824,
+      "_diff_within_contract": {
+        "Month-to-month": 0.020040680315956516,
+        "One year": 0.021790610718737016,
+        "Two year": 0.008745859888085385
+      }
+    },
+    {
+      "variable": "MultipleLines",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher",
+      "_group": "Yes",
+      "_diff_overall": 0.03225928573459619,
+      "_diff_within_contract": {
+        "Month-to-month": 0.09173686409923676,
+        "One year": 0.06325675491369773,
+        "Two year": 0.02084012675479302
+      }
+    },
+    {
+      "variable": "InternetService",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher",
+      "_group": "Fiber optic",
+      "_diff_overall": 0.2674718934146171,
+      "_diff_within_contract": {
+        "Month-to-month": 0.2590778606504814,
+        "One year": 0.12021826445197506,
+        "Two year": 0.05496083695135828
+      }
+    },
+    {
+      "variable": "OnlineSecurity",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed",
+      "_group": "Yes",
+      "_diff_overall": -0.16338386049094117,
+      "_diff_within_contract": {
+        "Month-to-month": -0.15738686388448675,
+        "One year": -0.006762498229712505,
+        "Two year": 0.002795994102994255
+      }
+    },
+    {
+      "variable": "OnlineBackup",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed",
+      "_group": "Yes",
+      "_diff_overall": -0.07501744828375093,
+      "_diff_within_contract": {
+        "Month-to-month": -0.06132433369151691,
+        "One year": 0.05848047124434655,
+        "Two year": 0.010176045588684235
+      }
+    },
+    {
+      "variable": "DeviceProtection",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed",
+      "_group": "Yes",
+      "_diff_overall": -0.06328288746077354,
+      "_diff_within_contract": {
+        "Month-to-month": 0.0054119460302249345,
+        "One year": 0.053466406609738656,
+        "Two year": 0.026594410156053995
+      }
+    },
+    {
+      "variable": "TechSupport",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed",
+      "_group": "Yes",
+      "_diff_overall": -0.15700057819783134,
+      "_diff_within_contract": {
+        "Month-to-month": -0.14388497239851084,
+        "One year": 0.03959543029788039,
+        "Two year": 0.012291757832859965
+      }
+    },
+    {
+      "variable": "StreamingTV",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher",
+      "_group": "Yes",
+      "_diff_overall": 0.055028680597112606,
+      "_diff_within_contract": {
+        "Month-to-month": 0.11548975678531137,
+        "One year": 0.1258546737107971,
+        "Two year": 0.03318705585114623
+      }
+    },
+    {
+      "variable": "StreamingMovies",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher",
+      "_group": "Yes",
+      "_diff_overall": 0.05456180909403674,
+      "_diff_within_contract": {
+        "Month-to-month": 0.11117872065248774,
+        "One year": 0.1444321098490916,
+        "Two year": 0.030163824770170343
+      }
+    },
+    {
+      "variable": "Contract",
+      "direction_overall": "higher",
+      "direction_within_contract": "not_checked",
+      "_group": "Month-to-month",
+      "_diff_overall": 0.35200700553926356,
+      "_diff_within_contract": {}
+    },
+    {
+      "variable": "PaperlessBilling",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher",
+      "_group": "Yes",
+      "_diff_overall": 0.16754914721558659,
+      "_diff_within_contract": {
+        "Month-to-month": 0.16339368695914086,
+        "One year": 0.0726634472511144,
+        "Two year": 0.024105830475257224
+      }
+    },
+    {
+      "variable": "PaymentMethod",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher",
+      "_group": "Electronic check",
+      "_diff_overall": 0.2770370417237991,
+      "_diff_within_contract": {
+        "Month-to-month": 0.20841508174841505,
+        "One year": 0.09075250433812275,
+        "Two year": 0.04981756946393488
+      }
+    },
+    {
+      "variable": "MonthlyCharges",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher",
+      "_group": "above median",
+      "_diff_overall": 0.16725391063652473,
+      "_diff_within_contract": {
+        "Month-to-month": 0.20685269827220026,
+        "One year": 0.11066333394393855,
+        "Two year": 0.033469442299697096
+      }
+    },
+    {
+      "variable": "TotalCharges",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed",
+      "_group": "above median",
+      "_diff_overall": -0.1509985273723119,
+      "_diff_within_contract": {
+        "Month-to-month": -0.09849813825137388,
+        "One year": 0.08303142869067992,
+        "Two year": 0.025996226708022124
+      }
+    },
+    {
+      "variable": "LoyaltyAppUser",
+      "direction_overall": "higher",
+      "direction_within_contract": "mixed",
+      "_group": "Yes",
+      "_diff_overall": 0.09550702872360356,
+      "_diff_within_contract": {
+        "Month-to-month": -0.21936192233153712,
+        "One year": -0.051559934318555004,
+        "Two year": -0.01916970404324268
+      }
+    }
+  ],
+  "recommendation": "do_not_fund",
+  "recommendation_all_scenarios": {
+    "keep_churn_No__with_outlier_charges": "do_not_fund",
+    "keep_churn_No__without_outlier_charges": "do_not_fund",
+    "keep_churn_Yes__with_outlier_charges": "do_not_fund",
+    "keep_churn_Yes__without_outlier_charges": "do_not_fund"
+  },
+  "breakeven_range": {
+    "min_all_versions": 0.5736705485562003,
+    "min_without_outlier_charges": 2.103568095608344
+  }
+}

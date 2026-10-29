@@ -28,5 +28,10 @@ Should we fund it?
 ## Results
 <!-- My recommendation in 1 line. 1 issue I caught that the agent first missed. -->
 
+### $2M campaign, v2 brief (`briefs/2m-campaign-v2.md`)
+**Do not fund.** Breakeven needs 421% of the 3,875 month-to-month customers to convert (mid case), against an assumed 5–20%. The answer holds under both duplicate rules and with or without the suspect charges.
+Full write-up: [`runs/2m-campaign-v2/recommendation.md`](runs/2m-campaign-v2/recommendation.md). Numbers come from `runs/2m-campaign-v2/analysis.py`.
+Data source: IBM Telco Customer Churn sample data (a fictional company), modified for teaching.
+
 ## Data
 Telco Customer Churn: IBM sample data (a fictional company), modified for teaching.
