@@ -1,37 +1,18 @@
-# Agentic Analyst Kit
+# Should we fund the $2M campaign?
 
-Business analysis with an AI agent: a brief, a reviewer agent, and checks you can trust.
-Built in the AI Fluency Sprint (BAX 462, UC Davis).
+**Question:** Should we spend $2M to move month-to-month customers to 1-year contracts?
 
-## The case: the $2M decision
-The VP of Marketing wants to spend $2M to move month-to-month customers to 1-year contracts.
-Should we fund it?
+## Answer: No, do not fund
 
-## How this repo works
-| File | What it is |
-| --- | --- |
-| `CLAUDE.md` | Team standards. The agent reads them in every session |
-| `briefs/` | One brief per business question |
-| `.claude/agents/` | Specialist agents, for example a reviewer |
-| `.claude/hooks/` | Guardrails the agent cannot skip (raw data is read-only) |
-| `data/raw/` | Raw data. Read-only |
-| `runs/` | Outputs: recommendation, charts, logs |
+To recover $2M in revenue within 12 months, **421% of month-to-month customers would have to convert**, more than 4× the whole base. The assumed range is 5–20%.
 
-## Steps (prompts only, no code)
-0. **Know the data:** ask the agent to profile the data. Write down 3 things that look wrong.
-1. **Brief:** ask the agent to interview you and write `briefs/2m-campaign.md`.
-2. **Reviewer:** ask the agent to create a reviewer agent.
-3. **Run:** in plan mode, read the plan, change 1 step, approve.
-4. **Verify:** ask for evidence for each claim. Compare it with your 3 notes.
-5. **Deliver:** fix what the review found, then commit and push.
+- **3,875** month-to-month customers churn **41.7%**, vs **10.9%** on 1-year contracts.
+- Even if every one of them switched and the whole churn gap held, the campaign would keep only about **$951K** of revenue, under half the cost.
+- The answer stays the same under every data-cleaning choice tested. Even the most generous one needs 57% conversion.
+- The one thing that could change it: if the real month-to-month base is about **130,000** customers, not 3,875, rerun the numbers.
 
-## Results
-<!-- My recommendation in 1 line. 1 issue I caught that the agent first missed. -->
+![Breakeven conversion vs the assumed 5–20% range](runs/2m-campaign-v2/chart3_breakeven.png)
 
-### $2M campaign, v2 brief (`briefs/2m-campaign-v2.md`)
-**Do not fund.** Breakeven needs 421% of the 3,875 month-to-month customers to convert (mid case), against an assumed 5–20%. The answer holds under both duplicate rules and with or without the suspect charges.
-Full write-up: [`runs/2m-campaign-v2/recommendation.md`](runs/2m-campaign-v2/recommendation.md). Numbers come from `runs/2m-campaign-v2/analysis.py`.
-Data source: IBM Telco Customer Churn sample data (a fictional company), modified for teaching.
+**Full write-up:** [recommendation.md](runs/2m-campaign-v2/recommendation.md). Every number comes from [analysis.py](runs/2m-campaign-v2/analysis.py). An independent review rated it ready to send: [review.md](runs/telco/review.md).
 
-## Data
-Telco Customer Churn: IBM sample data (a fictional company), modified for teaching.
+**Data source:** IBM Telco Customer Churn sample data (a fictional company), modified for teaching. File: `data/raw/telco_v2.csv`.
