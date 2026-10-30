@@ -1,0 +1,137 @@
+{
+  "recommendation": "do_not_fund",
+  "data_issues": [
+    {
+      "column": "customerID",
+      "issue": "211 IDs appear twice; each pair differs in Churn (one Yes, one No) and RetentionOfferAccepted",
+      "rows_affected": 422,
+      "action": "Kept the Churn=Yes row (brief rule 1), removed 211 rows; Churn=No kept as a sensitivity check"
+    },
+    {
+      "column": "MonthlyCharges",
+      "issue": "200 values above 120, likely x100",
+      "rows_affected": 200,
+      "action": "Divided 197 by 100 (consistent with TotalCharges / tenure); removed 3 that were not"
+    },
+    {
+      "column": "MonthlyCharges",
+      "issue": "Normal-range values more than 20% from TotalCharges / tenure",
+      "rows_affected": 66,
+      "action": "Flagged, not changed (brief rule 5)"
+    },
+    {
+      "column": "TotalCharges",
+      "issue": "Stored as text; blanks are a single space (all tenure 0)",
+      "rows_affected": 11,
+      "action": "Set to 0"
+    },
+    {
+      "column": "RetentionOfferAccepted",
+      "issue": "Filled only for churners; leaks the outcome",
+      "rows_affected": 2033,
+      "action": "Column dropped from the analysis"
+    }
+  ],
+  "drivers": [
+    {
+      "variable": "gender",
+      "direction_overall": "none",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "SeniorCitizen",
+      "direction_overall": "higher",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "Partner",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "Dependents",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "tenure",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "PhoneService",
+      "direction_overall": "higher",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "MultipleLines",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher"
+    },
+    {
+      "variable": "InternetService",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher"
+    },
+    {
+      "variable": "OnlineSecurity",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher"
+    },
+    {
+      "variable": "OnlineBackup",
+      "direction_overall": "higher",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "DeviceProtection",
+      "direction_overall": "higher",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "TechSupport",
+      "direction_overall": "higher",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "StreamingTV",
+      "direction_overall": "higher",
+      "direction_within_contract": "lower"
+    },
+    {
+      "variable": "StreamingMovies",
+      "direction_overall": "higher",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "Contract",
+      "direction_overall": "higher",
+      "direction_within_contract": "not_checked"
+    },
+    {
+      "variable": "PaperlessBilling",
+      "direction_overall": "higher",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "PaymentMethod",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher"
+    },
+    {
+      "variable": "MonthlyCharges",
+      "direction_overall": "higher",
+      "direction_within_contract": "higher"
+    },
+    {
+      "variable": "TotalCharges",
+      "direction_overall": "lower",
+      "direction_within_contract": "mixed"
+    },
+    {
+      "variable": "LoyaltyAppUser",
+      "direction_overall": "higher",
+      "direction_within_contract": "lower"
+    }
+  ]
+}
