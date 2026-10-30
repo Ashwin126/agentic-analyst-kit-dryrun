@@ -47,7 +47,7 @@ v2 asks the question as a conversion rate: break-even needs far more than 100% o
 
 ## Reviews
 - **v2:** independent review rated it *ready to send*: [runs/telco/review.md](runs/telco/review.md).
-- **v3:** independent review in progress: `runs/telco/review-v3.md`.
+- **v3:** independent review rated it *fix before sending*: [runs/telco/review-v3.md](runs/telco/review-v3.md). Every number reproduces; the headline wording and the rounding of two break-even thresholds need fixing. Not yet fixed.
 - **v1:** reviewed as *fix before sending*; the fixes were made but not re-reviewed. That review was later replaced by v2's at the same path and is in git history (commit `7082ed7`).
 
 Every number comes from each folder's `analysis.py`, which reruns from the raw data. Findings are associations from observational data, not causes.
