@@ -5,7 +5,7 @@
       "column": "customerID",
       "issue": "211 IDs appear twice; each pair differs in Churn (one Yes, one No) and RetentionOfferAccepted",
       "rows_affected": 422,
-      "action": "Kept the Churn=Yes row (user decision), removed 211 rows; Churn=No kept as a sensitivity check"
+      "action": "Kept the Churn=Yes row (brief rule 1), removed 211 rows; Churn=No kept as a sensitivity check"
     },
     {
       "column": "MonthlyCharges",
@@ -17,7 +17,7 @@
       "column": "MonthlyCharges",
       "issue": "Normal-range values more than 20% from TotalCharges / tenure",
       "rows_affected": 66,
-      "action": "Flagged, not changed (no rule in brief)"
+      "action": "Flagged, not changed (brief rule 5)"
     },
     {
       "column": "TotalCharges",
@@ -61,7 +61,7 @@
     {
       "variable": "PhoneService",
       "direction_overall": "higher",
-      "direction_within_contract": "higher"
+      "direction_within_contract": "mixed"
     },
     {
       "variable": "MultipleLines",
@@ -81,22 +81,22 @@
     {
       "variable": "OnlineBackup",
       "direction_overall": "higher",
-      "direction_within_contract": "higher"
+      "direction_within_contract": "mixed"
     },
     {
       "variable": "DeviceProtection",
       "direction_overall": "higher",
-      "direction_within_contract": "higher"
+      "direction_within_contract": "mixed"
     },
     {
       "variable": "TechSupport",
       "direction_overall": "higher",
-      "direction_within_contract": "higher"
+      "direction_within_contract": "mixed"
     },
     {
       "variable": "StreamingTV",
       "direction_overall": "higher",
-      "direction_within_contract": "mixed"
+      "direction_within_contract": "lower"
     },
     {
       "variable": "StreamingMovies",
@@ -111,7 +111,7 @@
     {
       "variable": "PaperlessBilling",
       "direction_overall": "higher",
-      "direction_within_contract": "higher"
+      "direction_within_contract": "mixed"
     },
     {
       "variable": "PaymentMethod",

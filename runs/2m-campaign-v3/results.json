@@ -26,28 +26,34 @@
         8684.8
       ]
     },
-    "text_columns": [
-      "customerID",
-      "gender",
-      "Partner",
-      "Dependents",
-      "PhoneService",
-      "MultipleLines",
-      "InternetService",
-      "OnlineSecurity",
-      "OnlineBackup",
-      "DeviceProtection",
-      "TechSupport",
-      "StreamingTV",
-      "StreamingMovies",
-      "Contract",
-      "PaperlessBilling",
-      "PaymentMethod",
-      "Churn",
-      "LoyaltyAppUser",
-      "RetentionOfferAccepted",
-      "TotalCharges (blanks stored as ' ')"
-    ]
+    "column_types": {
+      "customerID": "str",
+      "gender": "str",
+      "SeniorCitizen": "int64",
+      "Partner": "str",
+      "Dependents": "str",
+      "tenure": "int64",
+      "PhoneService": "str",
+      "MultipleLines": "str",
+      "InternetService": "str",
+      "OnlineSecurity": "str",
+      "OnlineBackup": "str",
+      "DeviceProtection": "str",
+      "TechSupport": "str",
+      "StreamingTV": "str",
+      "StreamingMovies": "str",
+      "Contract": "str",
+      "PaperlessBilling": "str",
+      "PaymentMethod": "str",
+      "MonthlyCharges": "float64",
+      "TotalCharges": "str",
+      "Churn": "str",
+      "LoyaltyAppUser": "str",
+      "RetentionOfferAccepted": "str"
+    },
+    "whitespace_only_per_column": {
+      "TotalCharges": 11
+    }
   },
   "cleaning": {
     "dup_ids": 211,
@@ -95,7 +101,7 @@
     "gap": 0.2981583446948657,
     "avg_monthly_charge_mtm_churners": 72.4881479324403,
     "value_per_saved_customer_12m": 869.8577751892835,
-    "customers_must_stay": 2759.0717338564377,
+    "customers_must_stay": 2760,
     "pilot_per_group": 4321,
     "pilot_churn_offered_mid_case": 0.41362424817514154,
     "max_value_if_all_mtm_churners_saved": 1493545.7999999998,
@@ -106,7 +112,7 @@
         "saved_customers_at_file_n": 28.861727766463,
         "value_at_file_n": 25105.598303054274,
         "value_per_1000_mtm": 6483.883859259885,
-        "break_even_mtm_base": 370148.5177857508,
+        "break_even_mtm_base": 370149,
         "roi_at_file_n": -0.9874472008484728
       },
       "mid": {
@@ -115,7 +121,7 @@
         "saved_customers_at_file_n": 115.446911065852,
         "value_at_file_n": 100422.3932122171,
         "value_per_1000_mtm": 25935.53543703954,
-        "break_even_mtm_base": 92537.1294464377,
+        "break_even_mtm_base": 92538,
         "roi_at_file_n": -0.9497888033938915
       },
       "high": {
@@ -124,7 +130,7 @@
         "saved_customers_at_file_n": 303.04814154786146,
         "value_at_file_n": 263608.78218206984,
         "value_per_1000_mtm": 68080.78052222877,
-        "break_even_mtm_base": 35252.23978911913,
+        "break_even_mtm_base": 35253,
         "roi_at_file_n": -0.8681956089089651
       }
     },
@@ -312,19 +318,19 @@
         "One year": 0.02345243041130038,
         "Two year": 0.01779944447593674
       },
-      "direction_within_contract": "higher"
+      "direction_within_contract": "mixed"
     },
     {
       "variable": "MultipleLines",
       "focus_group": "Yes",
       "churn_focus": 0.3069673510602491,
-      "churn_rest": 0.27525190464487587,
-      "diff_overall": 0.031715446415373216,
+      "churn_rest": 0.2770728828562998,
+      "diff_overall": 0.02989446820394931,
       "direction_overall": "higher",
       "diff_within_contract": {
-        "Month-to-month": 0.08507275591618252,
-        "One year": 0.07116905847944353,
-        "Two year": 0.023574217606876197
+        "Month-to-month": 0.08622919478182639,
+        "One year": 0.07292426674449146,
+        "Two year": 0.022607975350617704
       },
       "direction_within_contract": "higher"
     },
@@ -346,13 +352,13 @@
       "variable": "OnlineSecurity",
       "focus_group": "No",
       "churn_focus": 0.4353546910755149,
-      "churn_rest": 0.14390519187358916,
-      "diff_overall": 0.29144949920192575,
+      "churn_rest": 0.1733531451213472,
+      "diff_overall": 0.2620015459541677,
       "direction_overall": "higher",
       "diff_within_contract": {
-        "Month-to-month": 0.2502415198753185,
-        "One year": 0.10704569865075694,
-        "Two year": 0.03366717130546174
+        "Month-to-month": 0.2126621867207641,
+        "One year": 0.07054484427445165,
+        "Two year": 0.022839746081098594
       },
       "direction_within_contract": "higher"
     },
@@ -360,69 +366,69 @@
       "variable": "OnlineBackup",
       "focus_group": "No",
       "churn_focus": 0.4183408943616332,
-      "churn_rest": 0.18740515933232169,
-      "diff_overall": 0.2309357350293115,
+      "churn_rest": 0.23919308357348704,
+      "diff_overall": 0.17914781078814615,
       "direction_overall": "higher",
       "diff_within_contract": {
-        "Month-to-month": 0.18186968432224665,
-        "One year": 0.040638757804332515,
-        "Two year": 0.017042486002136085
+        "Month-to-month": 0.12564927502594636,
+        "One year": -0.007579709092349646,
+        "Two year": 0.003589954996736408
       },
-      "direction_within_contract": "higher"
+      "direction_within_contract": "mixed"
     },
     {
       "variable": "DeviceProtection",
       "focus_group": "No",
       "churn_focus": 0.40801810539928873,
-      "churn_rest": 0.1950848745882949,
-      "diff_overall": 0.21293323081099383,
+      "churn_rest": 0.2518579686209744,
+      "diff_overall": 0.1561601367783143,
       "direction_overall": "higher",
       "diff_within_contract": {
-        "Month-to-month": 0.11953584018801411,
-        "One year": 0.030663131107927205,
-        "Two year": 0.0039998154374996375
+        "Month-to-month": 0.03876470855481351,
+        "One year": -0.017903830851426605,
+        "Two year": -0.010234863176039652
       },
-      "direction_within_contract": "higher"
+      "direction_within_contract": "mixed"
     },
     {
       "variable": "TechSupport",
       "focus_group": "No",
       "churn_focus": 0.43359262460386055,
-      "churn_rest": 0.14766040907817315,
-      "diff_overall": 0.28593221552568737,
+      "churn_rest": 0.17954990215264188,
+      "diff_overall": 0.25404272245121867,
       "direction_overall": "higher",
       "diff_within_contract": {
-        "Month-to-month": 0.23548724453734948,
-        "One year": 0.06374017075254992,
-        "Two year": 0.02922828498739559
+        "Month-to-month": 0.1896782192819118,
+        "One year": 0.016440949184294756,
+        "Two year": 0.01775428889944053
       },
-      "direction_within_contract": "higher"
+      "direction_within_contract": "mixed"
     },
     {
       "variable": "StreamingTV",
       "focus_group": "No",
       "churn_focus": 0.3543447293447293,
-      "churn_rest": 0.24503780718336485,
-      "diff_overall": 0.10930692216136448,
+      "churn_rest": 0.32397487994089397,
+      "diff_overall": 0.03036984940383536,
       "direction_overall": "higher",
       "diff_within_contract": {
-        "Month-to-month": 0.01711036338336719,
-        "One year": -0.029801082031048087,
-        "Two year": -0.023799283154121866
+        "Month-to-month": -0.06854373716755857,
+        "One year": -0.08846370702500972,
+        "Two year": -0.043223249669749005
       },
-      "direction_within_contract": "mixed"
+      "direction_within_contract": "lower"
     },
     {
       "variable": "StreamingMovies",
       "focus_group": "No",
       "churn_focus": 0.3564498742364355,
-      "churn_rest": 0.2443035001174536,
-      "diff_overall": 0.11214637411898187,
+      "churn_rest": 0.32210834553440704,
+      "diff_overall": 0.034341528702028445,
       "direction_overall": "higher",
       "diff_within_contract": {
-        "Month-to-month": 0.01882520144049521,
-        "One year": -0.05441082198411763,
-        "Two year": 0.0068875378153728725
+        "Month-to-month": -0.06608216958915208,
+        "One year": -0.11618240434720899,
+        "Two year": -0.00781495338842382
       },
       "direction_within_contract": "mixed"
     },
@@ -448,7 +454,7 @@
         "One year": 0.0787239970282318,
         "Two year": 0.014768670819626233
       },
-      "direction_within_contract": "higher"
+      "direction_within_contract": "mixed"
     },
     {
       "variable": "PaymentMethod",
@@ -547,7 +553,7 @@
       "gap": 0.307796360662728,
       "avg_monthly_charge_mtm_churners": 73.0316718266254,
       "value_per_saved_customer_12m": 876.3800619195048,
-      "customers_must_stay": 2738.5378836019654,
+      "customers_must_stay": 2739,
       "pilot_per_group": 3979,
       "pilot_churn_offered_mid_case": 0.3863174713717437,
       "max_value_if_all_mtm_churners_saved": 1415353.8000000003,
@@ -558,7 +564,7 @@
           "saved_customers_at_file_n": 29.79468771215207,
           "value_at_file_n": 26111.470262048137,
           "value_per_1000_mtm": 6743.664840404995,
-          "break_even_mtm_base": 355889.5729248411,
+          "break_even_mtm_base": 355890,
           "roi_at_file_n": -0.9869442648689759
         },
         "mid": {
@@ -567,7 +573,7 @@
           "saved_customers_at_file_n": 119.17875084860827,
           "value_at_file_n": 104445.88104819255,
           "value_per_1000_mtm": 26974.65936161998,
-          "break_even_mtm_base": 88972.39323121027,
+          "break_even_mtm_base": 88973,
           "roi_at_file_n": -0.9477770594759037
         },
         "high": {
@@ -576,7 +582,7 @@
           "saved_customers_at_file_n": 312.8442209775967,
           "value_at_file_n": 274170.43775150547,
           "value_per_1000_mtm": 70808.48082425245,
-          "break_even_mtm_base": 33894.24504046106,
+          "break_even_mtm_base": 33895,
           "roi_at_file_n": -0.8629147811242472
         }
       },

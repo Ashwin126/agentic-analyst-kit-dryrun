@@ -4,7 +4,7 @@ Bar: 20% ROI on the $2M cost, i.e. >= $2.4M retained revenue within 12 months.
 Run from the repo root:  python3 runs/2m-campaign-v3/analysis.py [--dup-keep yes|no]
 Reads data/raw/telco_v2.csv (never writes there). Writes every deliverable in runs/2m-campaign-v3/.
 --dup-keep picks which row to keep for duplicate customerIDs whose rows differ only in Churn
-(user decision: "yes" is the main case; "no" is always computed as a sensitivity check).
+(brief rule 1: "yes" is the main case; "no" is always computed as a sensitivity check).
 """
 import argparse, json
 from math import ceil
@@ -48,7 +48,7 @@ def clean(raw, dup_keep):
     drop_idx = dup.index[dup.Churn != keep_val]
     for i in drop_idx:
         log.append((df.at[i, "customerID"], i + 2, "row", "removed",
-                    f"Duplicate customerID; rows differ in Churn. Kept the Churn={keep_val} row (user decision)."))
+                    f"Duplicate customerID; rows differ in Churn. Kept the Churn={keep_val} row (brief rule 1)."))
     df = df.drop(drop_idx)
     counts["dup_ids"] = dup.customerID.nunique()
     counts["dup_rows"] = len(dup)
@@ -87,13 +87,13 @@ def clean(raw, dup_keep):
     counts["mc_fixed"] = int(fixable.sum())
     counts["mc_removed"] = len(unfixable)
 
-    # 4. Normal-range MonthlyCharges inconsistent with TotalCharges / tenure: flag only (no rule in brief)
+    # 4. Normal-range MonthlyCharges inconsistent with TotalCharges / tenure: flag only (brief rule 5)
     implied = df.TotalCharges / df.tenure.where(df.tenure > 0)
     odd = (~hi.reindex(df.index)) & ((df.MonthlyCharges - implied).abs() > TOL * implied)
     for i in df.index[odd]:
         log.append((df.at[i, "customerID"], i + 2, "MonthlyCharges", "no change (flagged)",
                     f"{df.at[i, 'MonthlyCharges']:g} is >20% from TotalCharges / tenure ({implied[i]:.2f}); "
-                    "no rule in brief, kept as is."))
+                    "flagged per brief rule 5, kept as is."))
     counts["mc_inconsistent"] = int(odd.sum())
 
     # 5. RetentionOfferAccepted leaks the outcome: filled only for churners
@@ -126,7 +126,7 @@ def sizing(df):
     arpu = float(mtm.loc[mtm.churned, "MonthlyCharges"].mean())  # avg monthly charge of MTM churners
     value_per_saved = arpu * MONTHS
     n = len(mtm)
-    must_stay = BAR / value_per_saved
+    must_stay = ceil(BAR / value_per_saved)  # whole customers, rounded up
     cases = {}
     for k, (take, share) in CASES.items():
         saved_per_cust = take * gap * share
@@ -135,7 +135,7 @@ def sizing(df):
                     "saved_customers_at_file_n": n * saved_per_cust,
                     "value_at_file_n": n * v_per_cust,
                     "value_per_1000_mtm": 1000 * v_per_cust,
-                    "break_even_mtm_base": BAR / v_per_cust,
+                    "break_even_mtm_base": ceil(BAR / v_per_cust),  # rounded up: clears the bar
                     "roi_at_file_n": n * v_per_cust / COST - 1}
     # Pilot for the test_first range: offered vs not-offered groups, sized to detect the mid case's churn drop
     # across everyone offered (take-up x share real x gap); two-sided 5% test, 80% power
@@ -206,9 +206,16 @@ def direction(diff):
     return "higher" if diff >= NONE_BAND else "lower" if diff <= -NONE_BAND else "none"
 
 
-def drivers(df):
+# Variables compared only among customers who have the service (else "No internet service" joins the rest)
+POPULATION = {**{c: lambda d: d.InternetService != "No" for c in ("OnlineSecurity", "OnlineBackup",
+              "DeviceProtection", "TechSupport", "StreamingTV", "StreamingMovies")},
+              "MultipleLines": lambda d: d.PhoneService == "Yes"}
+
+
+def drivers(df_all):
     rows = []
     for var, f in DRIVERS.items():
+        df = df_all[POPULATION[var](df_all)] if var in POPULATION else df_all
         m = f(df)
         diff = rate(df.churned[m]) - rate(df.churned[~m])
         within = {}
@@ -217,9 +224,9 @@ def drivers(df):
                 mc = f(df).loc[d.index]  # focus group defined on the full data (same median)
                 if mc.sum() >= MIN_N and (~mc).sum() >= MIN_N:
                     within[c] = rate(d.churned[mc]) - rate(d.churned[~mc])
-        signs = {v > 0 for v in within.values()}  # within contract: same sign in every contract type
+        dirs = {direction(v) for v in within.values()}  # same 2-point band as overall, in every contract type
         wc = ("not_checked" if var == "Contract" or not within else
-              "higher" if signs == {True} else "lower" if signs == {False} else "mixed")
+              dirs.pop() if len(dirs) == 1 and dirs <= {"higher", "lower"} else "mixed")
         rows.append({"variable": var, "focus_group": FOCUS_LABEL.get(var, "Yes"),
                      "churn_focus": rate(df.churned[m]), "churn_rest": rate(df.churned[~m]),
                      "diff_overall": diff, "direction_overall": direction(diff),
@@ -289,9 +296,14 @@ def chart_tenure_gap(tg, path):
     ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1, decimals=0))
     ax.grid(axis="y", color=GRID, lw=0.6)
     ax.set_axisbelow(True)
-    f.suptitle(f"The churn gap shrinks from {(mtm[0] - one[0]) * 100:.0f} to {(mtm[-1] - one[-1]) * 100:.0f} "
-               "points as tenure grows", x=0.02, ha="left", fontsize=13, color=INK, weight="bold")
-    ax.set_title("Churn rate, month-to-month vs one year, by tenure group", loc="left", fontsize=9, color=MUTED)
+    ax.annotate("under 10 pts:\nknown exception\n(brief)", (len(labels) - 1, (mtm[-1] + one[-1]) / 2),
+                xytext=(len(labels) - 1.55, 0.45), fontsize=8, color=MUTED, ha="center",
+                arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.6))
+    f.suptitle(f"The churn gap is smaller in longer-tenure groups: {(mtm[0] - one[0]) * 100:.0f} points at "
+               f"{labels[0]} months, {(mtm[-1] - one[-1]) * 100:.0f} at {labels[-1]}",
+               x=0.02, ha="left", fontsize=13, color=INK, weight="bold")
+    ax.set_title("Churn rate, month-to-month vs one year, by tenure group (one snapshot, not change over time)",
+                 loc="left", fontsize=9, color=MUTED)
     f.tight_layout()
     f.savefig(path, dpi=200, facecolor=SURFACE)
     plt.close(f)
@@ -316,7 +328,7 @@ def chart_value(sz, path):
     bars = names + ["every MTM\nchurner"]
     a2.bar(bars, saved + [sz["n_mtm_churned"]], color=[ACCENT] * 3 + [GRAY], width=0.55)
     a2.axhline(sz["customers_must_stay"], color=INK, lw=1.5, ls="--")
-    a2.text(3.3, sz["customers_must_stay"], f"{sz['customers_must_stay']:,.0f} must stay",
+    a2.text(3.3, sz["customers_must_stay"], f"{sz['customers_must_stay']:,} must stay",
             va="bottom", ha="right", fontsize=9, color=INK)
     for i, v in enumerate(saved + [sz["n_mtm_churned"]]):
         a2.text(i, v, f"{v:,.0f}", ha="center", va="bottom", fontsize=9, color=INK2)
@@ -324,8 +336,9 @@ def chart_value(sz, path):
     a2.set_yticks([])
     a2.set_ylim(0, sz["customers_must_stay"] * 1.15)
     a2.set_title("Churners avoided over 12 months (estimated from assumptions)", loc="left", fontsize=9, color=MUTED)
-    f.suptitle(f"Even the high case falls short of the $2.4M bar: an estimated {saved[2]:,.0f} churners avoided, "
-               f"{sz['customers_must_stay']:,.0f} needed", x=0.02, ha="left", fontsize=13, color=INK, weight="bold")
+    f.suptitle(f"At {sz['n_mtm']:,} customers, even the high case misses the $2.4M bar: "
+               f"{saved[2]:,.0f} churners avoided, {sz['customers_must_stay']:,} needed",
+               x=0.02, ha="left", fontsize=13, color=INK, weight="bold")
     f.tight_layout()
     f.savefig(path, dpi=200, facecolor=SURFACE)
     plt.close(f)
@@ -333,13 +346,16 @@ def chart_value(sz, path):
 
 # ---------------------------------------------------------------- outputs
 def profile(raw):
+    typed = pd.read_csv(RAW)  # pandas-inferred types, as the CLAUDE.md profile asks
     num = {c: pd.to_numeric(raw[c].str.strip().replace("", None), errors="coerce")
            for c in ("SeniorCitizen", "tenure", "MonthlyCharges", "TotalCharges")}
     return {"rows": len(raw), "columns": raw.shape[1], "unique_customer_ids": int(raw.customerID.nunique()),
             "blanks_per_column": {c: int((raw[c].str.strip() == "").sum()) for c in raw.columns
                                   if (raw[c].str.strip() == "").any()},
             "min_max": {c: [float(s.min()), float(s.max())] for c, s in num.items()},
-            "text_columns": [c for c in raw.columns if c not in num] + ["TotalCharges (blanks stored as ' ')"]}
+            "column_types": {c: str(t) for c, t in typed.dtypes.items()},
+            "whitespace_only_per_column": {c: int(((raw[c] != "") & (raw[c].str.strip() == "")).sum())
+                                           for c in raw.columns if ((raw[c] != "") & (raw[c].str.strip() == "")).any()}}
 
 
 def write_cleaning_log(log, counts, dup_keep, path):
@@ -372,14 +388,14 @@ def write_findings(rec, counts, drv, path):
         "data_issues": [
             {"column": "customerID", "issue": f"{counts['dup_ids']} IDs appear twice; each pair differs in Churn "
              "(one Yes, one No) and RetentionOfferAccepted", "rows_affected": counts["dup_rows"],
-             "action": f"Kept the Churn=Yes row (user decision), removed {counts['dup_removed']} rows; "
+             "action": f"Kept the Churn=Yes row (brief rule 1), removed {counts['dup_removed']} rows; "
                        "Churn=No kept as a sensitivity check"},
             {"column": "MonthlyCharges", "issue": f"{counts['mc_high']} values above 120, likely x100",
              "rows_affected": counts["mc_high"],
              "action": f"Divided {counts['mc_fixed']} by 100 (consistent with TotalCharges / tenure); "
                        f"removed {counts['mc_removed']} that were not"},
             {"column": "MonthlyCharges", "issue": "Normal-range values more than 20% from TotalCharges / tenure",
-             "rows_affected": counts["mc_inconsistent"], "action": "Flagged, not changed (no rule in brief)"},
+             "rows_affected": counts["mc_inconsistent"], "action": "Flagged, not changed (brief rule 5)"},
             {"column": "TotalCharges", "issue": "Stored as text; blanks are a single space (all tenure 0)",
              "rows_affected": counts["tc_blank"], "action": "Set to 0"},
             {"column": "RetentionOfferAccepted", "issue": "Filled only for churners; leaks the outcome",
@@ -407,17 +423,20 @@ def write_recommendation(R, path):
         "# $2M month-to-month → 1-year campaign (v3): recommendation", "",
         f"For: VP of Marketing. Bar: **{MIN_ROI:.0%} ROI** on the $2M cost, i.e. ≥ **{money(BAR)}** in retained revenue "
         "within 12 months. Brief: `briefs/2m-campaign-v3.md`.", "",
-        f"## Recommendation: **Do not fund, unless the month-to-month base is at least {be_hi:,.0f} customers**", "",
+        f"## Recommendation: **Do not fund** at the base we can see. With a larger base: test first from "
+        f"{be_hi:,} month-to-month customers, fund only from {be_lo:,}", "",
         f"At the only base we can see ({s['n_mtm']:,} month-to-month customers), even the high case returns "
         f"**{money(k['high']['value_at_file_n'])}** (ROI {k['high']['roi_at_file_n']:.0%}). To reach {money(BAR)}, "
-        f"**{s['customers_must_stay']:,.0f} customers who would have left must stay**. Even if all "
+        f"**{s['customers_must_stay']:,} customers who would have left must stay**. Even if all "
         f"{s['n_mtm_churned']:,} month-to-month churners stayed, that is only "
         f"{money(s['max_value_if_all_mtm_churners_saved'])}. The answer depends on the real base size, which is not in the data:", "",
-        f"- **Below {be_hi:,.0f}:** do not fund.",
-        f"- **{be_hi:,.0f} to {be_lo:,.0f}:** test first. Pilot: offer the 1-year contract to {s['pilot_per_group']:,} "
-        f"month-to-month customers and hold out {s['pilot_per_group']:,} more, chosen at random. That is enough to detect the "
-        f"mid case ({pct(s['churn_mtm'])} → {pct(s['pilot_churn_offered_mid_case'])} churn across everyone offered).",
-        f"- **Above {be_lo:,.0f}:** fund. It clears the {money(BAR)} bar even under the low-case assumptions.", "",
+        f"- **Below {be_hi:,}:** do not fund. Even the high case misses the bar.",
+        f"- **{be_hi:,} to {be_lo - 1:,}:** test first. Pilot: offer the 1-year contract to {s['pilot_per_group']:,} "
+        f"month-to-month customers and hold out {s['pilot_per_group']:,} more, chosen at random, and compare churn over "
+        f"the following 12 months. That size detects the mid case ({pct(s['churn_mtm'])} → "
+        f"{pct(s['pilot_churn_offered_mid_case'])} churn across everyone offered); the effect needed to clear the bar "
+        "depends on the real base, so resize the pilot once that number is known.",
+        f"- **{be_lo:,} or more:** fund. It clears the {money(BAR)} bar even under the low-case assumptions.", "",
         "## What we found", "",
         f"- Month-to-month customers churn at **{pct(s['churn_mtm'])}** vs **{pct(s['churn_1yr'])}** on one-year "
         f"contracts, a {s['gap'] * 100:.1f}-point gap (chart 1).",
@@ -436,11 +455,13 @@ def write_recommendation(R, path):
         "## How sure we are", "",
         f"- **Sure:** at this file's scale the answer is no. Even avoiding every month-to-month churner falls short of {money(BAR)}.",
         "- **Not sure:** the base size, the take-up and how much of the gap a contract switch would really change. The data "
-        "cannot separate who chooses a 1-year contract from what the contract does. Tenure does not narrow the gap on "
-        "average, so the data does not favor the low or the high case.",
-        f"- **The duplicate choice barely matters:** keeping the Churn=No copies gives {pct(s_no['churn_mtm'])} vs "
-        f"{pct(s_no['churn_1yr'])} and moves the break-even bases by {be_shift:+.0%}. "
-        f"Recommendation {'unchanged' if same else 'CHANGES to ' + s_no['recommendation']}.", "",
+        "cannot separate who chooses a 1-year contract from what the contract does. Adjusting for the tenure mix leaves "
+        f"the gap about the same ({R['gap_weighted_by_mtm_tenure_mix'] * 100:.1f} vs {s['gap'] * 100:.1f} points), so the "
+        "data does not favor the low or the high case.",
+        f"- **The duplicate choice changes churn levels, not the decision:** keeping the Churn=No copies gives "
+        f"{pct(s_no['churn_mtm'])} vs {pct(s_no['churn_1yr'])} (instead of {pct(s['churn_mtm'])} vs {pct(s['churn_1yr'])}), "
+        f"and the pilot's baseline would move with it. The gap barely changes, the break-even bases move by "
+        f"{be_shift:+.0%}, and the recommendation is {'unchanged' if same else 'CHANGED to ' + s_no['recommendation']}.", "",
         f"## Value range (12-month retained revenue vs the {money(BAR)} bar)", "",
         "| Case | Take-up | Share of gap that's real | Churners avoided | Value (this file) | ROI (this file) | Per 1,000 MTM customers | MTM base to clear the bar |",
         "|---|---|---|---|---|---|---|---|"]
@@ -448,18 +469,19 @@ def write_recommendation(R, path):
         v = k[name]
         lines.append(f"| {name.capitalize()} | {v['take_up']:.0%} | {v['share_of_gap_real']:.0%} | "
                      f"{v['saved_customers_at_file_n']:,.0f} | {money(v['value_at_file_n'])} | {v['roi_at_file_n']:.0%} | "
-                     f"${v['value_per_1000_mtm']:,.0f} | {v['break_even_mtm_base']:,.0f} |")
+                     f"${v['value_per_1000_mtm']:,.0f} | {v['break_even_mtm_base']:,} |")
     lines += [
         "", "Formula: MTM customers × take-up × churn gap × share real × avg monthly charge of MTM churners × 12. "
-        "ROI = (value − $2M) ÷ $2M. Assumptions (none measured): take-up and share real are from the brief; each churner "
+        "ROI = (value − $2M) ÷ $2M. Customer counts needed are rounded up so they clear the bar. Assumptions (none measured): take-up and share real are from the brief; each churner "
         "avoided pays for 12 full months; the $2M includes the discount; the Churn flag (left in the last month) is "
         "treated as a one-time difference, not a monthly rate repeated for 12 months.", "",
         "## Data issues", "",
         f"- {c['dup_ids']} customer IDs appeared twice, with the pairs disagreeing on Churn. We kept the Churn=Yes row "
         f"(per the brief) and removed {c['dup_removed']} rows.",
         f"- {c['mc_high']} MonthlyCharges values looked ×100: {c['mc_fixed']} were divided by 100 and "
-        f"{c['mc_removed']} removed. Another {c['mc_inconsistent']} don't match TotalCharges ÷ tenure; they were flagged "
-        f"and left as is. {c['tc_blank']} blank TotalCharges (new customers) were set to 0. RetentionOfferAccepted "
+        f"{c['mc_removed']} removed because ÷100 didn't match TotalCharges ÷ tenure. Another {c['mc_inconsistent']} "
+        "normal-range values don't match either; per the brief they were flagged and kept, so similar mismatches are "
+        f"handled differently above and below 120 (the effect on the result is negligible). {c['tc_blank']} blank TotalCharges (new customers) were set to 0. RetentionOfferAccepted "
         "leaks the outcome and was dropped.",
         f"- {c['removed_rows']} of {c['raw_rows']:,} rows removed ({c['removed_share']:.1%}). See `cleaning_log.md`.", "",
         "## Risks", "",
@@ -469,7 +491,7 @@ def write_recommendation(R, path):
         "- Revenue is not profit: clearing the bar on revenue may still lose money once the cost of serving customers is counted.", "",
         "## Next step", "",
         f"**Give us the real number of month-to-month customers.** We then apply the ranges above. If it is between "
-        f"{be_hi:,.0f} and {be_lo:,.0f}, run the pilot before committing $2M.",
+        f"{be_hi:,} and {be_lo - 1:,}, run the pilot before committing $2M.",
     ]
     path.write_text("\n".join(lines) + "\n")
 
@@ -523,7 +545,7 @@ def main():
     chart_tenure_gap(gaps["tenure"], OUT / "chart2_tenure_gap.png")
     chart_value(sz, OUT / "chart3_value.png")
     print(f"recommendation={sz['recommendation']}  removed={counts['removed_share']:.2%}  "
-          f"high={money(sz['cases']['high']['value_at_file_n'])}  must_stay={sz['customers_must_stay']:,.0f}")
+          f"high={money(sz['cases']['high']['value_at_file_n'])}  must_stay={sz['customers_must_stay']:,}")
 
 
 if __name__ == "__main__":

@@ -21,217 +21,217 @@ Row = line number in the raw CSV (header is line 1).
 
 | customerID | Row | Column | Change | Reason |
 |---|---|---|---|---|
-| 2169-RRLFW | 26 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6685-XSHHU | 47 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2344-JMOGN | 88 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9227-YBAXE | 163 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8356-WUAOJ | 179 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8756-RDDLT | 217 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2656-TABEH | 231 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5884-FBCTL | 312 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9040-KZVWO | 314 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9530-EHPOH | 343 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4654-DLAMQ | 359 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8707-RMEZH | 374 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6872-HXFNF | 416 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0363-SVHYR | 495 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0225-ZORZP | 500 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1905-OEILC | 507 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8097-OMULG | 512 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3115-JPJDD | 554 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0897-FEGMU | 613 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9239-GZHZE | 616 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9448-REEVD | 624 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7951-QKZPL | 643 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2309-OSFEU | 681 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7216-EWTRS | 775 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0052-DCKON | 802 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2599-CZABP | 830 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0533-UCAAU | 922 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6088-BXMRG | 926 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3658-KIBGF | 930 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8146-QQKZH | 944 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8443-WVPSS | 1015 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4727-MCYZG | 1054 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4039-HEUNW | 1066 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5220-AGAAX | 1166 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6242-SGYTS | 1203 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1849-RJYIG | 1206 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8582-KRHPJ | 1272 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5093-FEGLU | 1308 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5802-ADBRC | 1344 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3644-QXEHN | 1486 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7029-RPUAV | 1528 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8883-ANODQ | 1562 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2533-QVMSK | 1565 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5337-IIWKZ | 1607 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6518-LGAOV | 1629 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8205-MQUGY | 1660 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5839-SUYVZ | 1799 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1173-XZPYF | 1805 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3798-EPWRR | 1869 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6734-GMPVK | 1887 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3785-NRHYR | 1939 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1137-DGOWI | 1942 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5701-GUXDC | 2015 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0459-SPZHJ | 2021 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0428-AXXLJ | 2023 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8748-HFWBO | 2031 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6981-TDRFT | 2037 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8461-EFQYM | 2056 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3750-RNQKR | 2094 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3694-GLTJM | 2131 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7929-SKFGK | 2136 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2230-XTUWL | 2263 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3034-ZBEQN | 2339 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5186-PEIZU | 2347 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7319-VENRZ | 2358 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3301-VKTGC | 2362 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5244-IRFIH | 2378 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2480-SQIOB | 2389 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9693-XMUOB | 2423 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5712-VBOXD | 2521 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6127-ISGTU | 2576 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4986-MXSFP | 2579 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5916-QEWPT | 2655 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7693-QPEFS | 2720 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2040-VZIKE | 2764 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4785-FCIFB | 2841 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8945-MUQUF | 2854 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8879-ZKJOF | 2943 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0732-OCQOC | 2979 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0799-DDIHE | 3000 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5478-JJVZK | 3008 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9158-VCTQB | 3040 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5150-LJNSR | 3056 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3930-ZGWVE | 3059 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1163-VIPRI | 3066 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1241-FPMOF | 3080 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3009-JWMPU | 3093 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0640-YJTPY | 3119 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1452-UZOSF | 3170 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4039-PIMHX | 3258 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2325-WINES | 3323 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0788-DXBFY | 3356 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8076-FEZKJ | 3398 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5134-IKDAY | 3401 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7802-EFKNY | 3402 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3955-JBZZM | 3471 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1741-WTPON | 3496 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0557-ASKVU | 3539 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6285-FTQBF | 3597 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2882-WDTBA | 3667 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5774-XZTQC | 3673 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0967-BMLBD | 3758 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0023-XUOPT | 3760 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6897-UUBNU | 3766 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8259-DZLIZ | 3834 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1061-PNTHC | 3847 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8468-FZTOE | 3897 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8915-NNTRC | 3980 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4229-CZMLL | 4072 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3810-DVDQQ | 4146 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7140-ADSMJ | 4150 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0315-LVCRK | 4197 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7527-QNRUS | 4231 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3317-VLGQT | 4280 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9314-IJWSQ | 4281 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6736-DHUQI | 4329 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6000-APYLU | 4395 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7993-NQLJE | 4418 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7410-YTJIK | 4472 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3642-GKTCT | 4486 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8190-ZTQFB | 4510 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9053-JZFKV | 4533 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7427-AUFPY | 4562 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4201-JMNGR | 4663 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8652-YHIYU | 4774 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8670-MEFCP | 4790 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0048-LUMLS | 4864 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6408-OTUBZ | 4929 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4994-OBRSZ | 4932 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8189-XRIKE | 4938 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1571-SAVHK | 4954 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1927-QEWMY | 4976 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6061-GWWAV | 4989 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6701-DHKWQ | 5002 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8084-OIVBS | 5017 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0877-SDMBN | 5059 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0733-VUNUW | 5104 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6305-YLBMM | 5105 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4947-DSMXK | 5237 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1596-BBVTG | 5251 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0784-GTUUK | 5315 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5010-IPEAQ | 5320 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5510-BOIUJ | 5364 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3580-HYCSP | 5385 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2054-PJOCK | 5393 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5442-XSDCW | 5396 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4159-NAAIX | 5444 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8559-WNQZS | 5447 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7647-GYYKX | 5448 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9029-FEGVJ | 5480 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2616-FLVQC | 5488 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5174-ITUMV | 5497 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1937-OTUKY | 5499 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9962-BFPDU | 5516 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7410-KTVFV | 5534 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9068-VPWQQ | 5549 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7017-VFHAY | 5681 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9046-DQMTP | 5714 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5537-UXXVS | 5723 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4808-YNLEU | 5745 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3363-EWLGO | 5755 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4767-HZZHQ | 5818 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4186-ZBUEW | 5820 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3635-QQRQD | 5865 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9089-UOWJG | 5883 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7599-NTMDP | 5916 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5895-QSXOD | 5918 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9500-LTVBP | 5946 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4903-CNOZC | 5996 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1775-KWJKQ | 6014 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2180-DXNEG | 6021 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9027-TMATR | 6066 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4877-TSOFF | 6082 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7356-AYNJP | 6137 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3195-TQDZX | 6160 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2737-YNGYW | 6193 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5183-KLYEM | 6202 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7459-IMVYU | 6213 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1585-MQSSU | 6214 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 3780-YVMFA | 6227 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2519-TWKFS | 6250 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7674-YTAFD | 6258 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2446-PLQVO | 6325 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9191-MYQKX | 6493 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6844-DZKRF | 6501 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9091-WTUUY | 6549 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2027-DNKIV | 6579 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9761-XUJWD | 6606 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5141-ZUVBH | 6608 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1996-DBMUS | 6612 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0723-VSOBE | 6625 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 4547-LYTDD | 6667 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6618-RYATB | 6670 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9753-OYLBX | 6673 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2636-OHFMN | 6693 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5018-LXQQG | 6736 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8917-FAEMR | 6748 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1114-CENIM | 6783 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0486-LGCCH | 6889 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6408-WHTEF | 6917 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0602-DDUML | 6998 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 2187-PKZAY | 6999 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9764-REAFF | 7055 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6080-TCMYC | 7100 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 9780-FKVVF | 7118 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 1936-CZAKF | 7137 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 5842-POCOP | 7152 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 7727-SHVZV | 7166 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 6574-MCOEH | 7177 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 0568-ONFPC | 7244 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
-| 8184-WMOFI | 7246 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (user decision). |
+| 2169-RRLFW | 26 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6685-XSHHU | 47 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2344-JMOGN | 88 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9227-YBAXE | 163 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8356-WUAOJ | 179 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8756-RDDLT | 217 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2656-TABEH | 231 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5884-FBCTL | 312 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9040-KZVWO | 314 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9530-EHPOH | 343 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4654-DLAMQ | 359 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8707-RMEZH | 374 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6872-HXFNF | 416 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0363-SVHYR | 495 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0225-ZORZP | 500 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1905-OEILC | 507 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8097-OMULG | 512 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3115-JPJDD | 554 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0897-FEGMU | 613 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9239-GZHZE | 616 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9448-REEVD | 624 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7951-QKZPL | 643 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2309-OSFEU | 681 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7216-EWTRS | 775 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0052-DCKON | 802 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2599-CZABP | 830 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0533-UCAAU | 922 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6088-BXMRG | 926 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3658-KIBGF | 930 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8146-QQKZH | 944 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8443-WVPSS | 1015 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4727-MCYZG | 1054 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4039-HEUNW | 1066 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5220-AGAAX | 1166 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6242-SGYTS | 1203 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1849-RJYIG | 1206 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8582-KRHPJ | 1272 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5093-FEGLU | 1308 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5802-ADBRC | 1344 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3644-QXEHN | 1486 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7029-RPUAV | 1528 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8883-ANODQ | 1562 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2533-QVMSK | 1565 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5337-IIWKZ | 1607 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6518-LGAOV | 1629 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8205-MQUGY | 1660 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5839-SUYVZ | 1799 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1173-XZPYF | 1805 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3798-EPWRR | 1869 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6734-GMPVK | 1887 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3785-NRHYR | 1939 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1137-DGOWI | 1942 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5701-GUXDC | 2015 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0459-SPZHJ | 2021 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0428-AXXLJ | 2023 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8748-HFWBO | 2031 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6981-TDRFT | 2037 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8461-EFQYM | 2056 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3750-RNQKR | 2094 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3694-GLTJM | 2131 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7929-SKFGK | 2136 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2230-XTUWL | 2263 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3034-ZBEQN | 2339 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5186-PEIZU | 2347 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7319-VENRZ | 2358 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3301-VKTGC | 2362 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5244-IRFIH | 2378 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2480-SQIOB | 2389 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9693-XMUOB | 2423 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5712-VBOXD | 2521 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6127-ISGTU | 2576 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4986-MXSFP | 2579 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5916-QEWPT | 2655 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7693-QPEFS | 2720 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2040-VZIKE | 2764 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4785-FCIFB | 2841 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8945-MUQUF | 2854 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8879-ZKJOF | 2943 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0732-OCQOC | 2979 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0799-DDIHE | 3000 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5478-JJVZK | 3008 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9158-VCTQB | 3040 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5150-LJNSR | 3056 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3930-ZGWVE | 3059 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1163-VIPRI | 3066 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1241-FPMOF | 3080 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3009-JWMPU | 3093 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0640-YJTPY | 3119 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1452-UZOSF | 3170 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4039-PIMHX | 3258 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2325-WINES | 3323 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0788-DXBFY | 3356 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8076-FEZKJ | 3398 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5134-IKDAY | 3401 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7802-EFKNY | 3402 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3955-JBZZM | 3471 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1741-WTPON | 3496 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0557-ASKVU | 3539 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6285-FTQBF | 3597 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2882-WDTBA | 3667 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5774-XZTQC | 3673 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0967-BMLBD | 3758 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0023-XUOPT | 3760 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6897-UUBNU | 3766 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8259-DZLIZ | 3834 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1061-PNTHC | 3847 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8468-FZTOE | 3897 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8915-NNTRC | 3980 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4229-CZMLL | 4072 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3810-DVDQQ | 4146 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7140-ADSMJ | 4150 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0315-LVCRK | 4197 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7527-QNRUS | 4231 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3317-VLGQT | 4280 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9314-IJWSQ | 4281 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6736-DHUQI | 4329 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6000-APYLU | 4395 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7993-NQLJE | 4418 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7410-YTJIK | 4472 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3642-GKTCT | 4486 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8190-ZTQFB | 4510 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9053-JZFKV | 4533 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7427-AUFPY | 4562 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4201-JMNGR | 4663 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8652-YHIYU | 4774 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8670-MEFCP | 4790 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0048-LUMLS | 4864 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6408-OTUBZ | 4929 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4994-OBRSZ | 4932 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8189-XRIKE | 4938 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1571-SAVHK | 4954 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1927-QEWMY | 4976 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6061-GWWAV | 4989 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6701-DHKWQ | 5002 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8084-OIVBS | 5017 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0877-SDMBN | 5059 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0733-VUNUW | 5104 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6305-YLBMM | 5105 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4947-DSMXK | 5237 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1596-BBVTG | 5251 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0784-GTUUK | 5315 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5010-IPEAQ | 5320 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5510-BOIUJ | 5364 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3580-HYCSP | 5385 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2054-PJOCK | 5393 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5442-XSDCW | 5396 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4159-NAAIX | 5444 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8559-WNQZS | 5447 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7647-GYYKX | 5448 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9029-FEGVJ | 5480 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2616-FLVQC | 5488 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5174-ITUMV | 5497 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1937-OTUKY | 5499 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9962-BFPDU | 5516 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7410-KTVFV | 5534 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9068-VPWQQ | 5549 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7017-VFHAY | 5681 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9046-DQMTP | 5714 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5537-UXXVS | 5723 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4808-YNLEU | 5745 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3363-EWLGO | 5755 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4767-HZZHQ | 5818 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4186-ZBUEW | 5820 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3635-QQRQD | 5865 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9089-UOWJG | 5883 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7599-NTMDP | 5916 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5895-QSXOD | 5918 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9500-LTVBP | 5946 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4903-CNOZC | 5996 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1775-KWJKQ | 6014 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2180-DXNEG | 6021 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9027-TMATR | 6066 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4877-TSOFF | 6082 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7356-AYNJP | 6137 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3195-TQDZX | 6160 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2737-YNGYW | 6193 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5183-KLYEM | 6202 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7459-IMVYU | 6213 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1585-MQSSU | 6214 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 3780-YVMFA | 6227 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2519-TWKFS | 6250 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7674-YTAFD | 6258 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2446-PLQVO | 6325 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9191-MYQKX | 6493 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6844-DZKRF | 6501 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9091-WTUUY | 6549 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2027-DNKIV | 6579 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9761-XUJWD | 6606 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5141-ZUVBH | 6608 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1996-DBMUS | 6612 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0723-VSOBE | 6625 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 4547-LYTDD | 6667 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6618-RYATB | 6670 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9753-OYLBX | 6673 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2636-OHFMN | 6693 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5018-LXQQG | 6736 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8917-FAEMR | 6748 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1114-CENIM | 6783 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0486-LGCCH | 6889 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6408-WHTEF | 6917 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0602-DDUML | 6998 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 2187-PKZAY | 6999 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9764-REAFF | 7055 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6080-TCMYC | 7100 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 9780-FKVVF | 7118 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 1936-CZAKF | 7137 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 5842-POCOP | 7152 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 7727-SHVZV | 7166 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 6574-MCOEH | 7177 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 0568-ONFPC | 7244 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
+| 8184-WMOFI | 7246 | row | removed | Duplicate customerID; rows differ in Churn. Kept the Churn=Yes row (brief rule 1). |
 | 4075-WKNIU | 1013 | TotalCharges | ' ' -> 0 | Blank TotalCharges with tenure 0: new customer, not yet billed. |
 | 3213-VVOLG | 1469 | TotalCharges | ' ' -> 0 | Blank TotalCharges with tenure 0: new customer, not yet billed. |
 | 2520-SGTTA | 1738 | TotalCharges | ' ' -> 0 | Blank TotalCharges with tenure 0: new customer, not yet billed. |
@@ -443,69 +443,69 @@ Row = line number in the raw CSV (header is line 1).
 | 2933-FILNV | 81 | row | removed | MonthlyCharges 2440 > 120 and /100 is not within 20% of TotalCharges / tenure (18.27). |
 | 2832-SCUCO | 610 | row | removed | MonthlyCharges 1990 > 120 and /100 is not within 20% of TotalCharges / tenure (28.70). |
 | 1777-JYQPJ | 1550 | row | removed | MonthlyCharges 2430 > 120 and /100 is not within 20% of TotalCharges / tenure (19.23). |
-| 6180-YBIQI | 51 | MonthlyCharges | no change (flagged) | 24.3 is >20% from TotalCharges / tenure (20.04); no rule in brief, kept as is. |
-| 3489-HHPFY | 232 | MonthlyCharges | no change (flagged) | 84.05 is >20% from TotalCharges / tenure (67.03); no rule in brief, kept as is. |
-| 4398-HSCJH | 324 | MonthlyCharges | no change (flagged) | 63.6 is >20% from TotalCharges / tenure (51.88); no rule in brief, kept as is. |
-| 8053-WWDRO | 335 | MonthlyCharges | no change (flagged) | 19.5 is >20% from TotalCharges / tenure (24.38); no rule in brief, kept as is. |
-| 8909-BOLNL | 431 | MonthlyCharges | no change (flagged) | 21.2 is >20% from TotalCharges / tenure (17.35); no rule in brief, kept as is. |
-| 2387-KDZQY | 602 | MonthlyCharges | no change (flagged) | 20.1 is >20% from TotalCharges / tenure (16.44); no rule in brief, kept as is. |
-| 2260-USTRB | 674 | MonthlyCharges | no change (flagged) | 70.2 is >20% from TotalCharges / tenure (57.98); no rule in brief, kept as is. |
-| 6260-XLACS | 1217 | MonthlyCharges | no change (flagged) | 19.7 is >20% from TotalCharges / tenure (29.45); no rule in brief, kept as is. |
-| 3156-QLHBO | 1382 | MonthlyCharges | no change (flagged) | 19.25 is >20% from TotalCharges / tenure (24.18); no rule in brief, kept as is. |
-| 4195-SMMNX | 1388 | MonthlyCharges | no change (flagged) | 20.35 is >20% from TotalCharges / tenure (16.60); no rule in brief, kept as is. |
-| 1142-WACZW | 1529 | MonthlyCharges | no change (flagged) | 29.85 is >20% from TotalCharges / tenure (37.80); no rule in brief, kept as is. |
-| 2792-VPPET | 1613 | MonthlyCharges | no change (flagged) | 20.5 is >20% from TotalCharges / tenure (25.65); no rule in brief, kept as is. |
-| 5647-URDKA | 1702 | MonthlyCharges | no change (flagged) | 19.7 is >20% from TotalCharges / tenure (16.28); no rule in brief, kept as is. |
-| 6924-TDGMT | 1959 | MonthlyCharges | no change (flagged) | 20.55 is >20% from TotalCharges / tenure (16.81); no rule in brief, kept as is. |
-| 7343-EOBEU | 2065 | MonthlyCharges | no change (flagged) | 23.6 is >20% from TotalCharges / tenure (29.68); no rule in brief, kept as is. |
-| 9426-SXNHE | 2121 | MonthlyCharges | no change (flagged) | 18.75 is >20% from TotalCharges / tenure (26.57); no rule in brief, kept as is. |
-| 1385-TQOZW | 2135 | MonthlyCharges | no change (flagged) | 20.45 is >20% from TotalCharges / tenure (16.39); no rule in brief, kept as is. |
-| 9294-TDIPC | 2158 | MonthlyCharges | no change (flagged) | 20.2 is >20% from TotalCharges / tenure (16.75); no rule in brief, kept as is. |
-| 5066-GFJMM | 2166 | MonthlyCharges | no change (flagged) | 19.9 is >20% from TotalCharges / tenure (15.25); no rule in brief, kept as is. |
-| 2791-SFVEW | 2461 | MonthlyCharges | no change (flagged) | 20.15 is >20% from TotalCharges / tenure (26.46); no rule in brief, kept as is. |
-| 9505-SQFSW | 2510 | MonthlyCharges | no change (flagged) | 40.3 is >20% from TotalCharges / tenure (30.83); no rule in brief, kept as is. |
-| 3677-IYRBF | 2557 | MonthlyCharges | no change (flagged) | 30.4 is >20% from TotalCharges / tenure (39.33); no rule in brief, kept as is. |
-| 6022-KOUQO | 2559 | MonthlyCharges | no change (flagged) | 29.05 is >20% from TotalCharges / tenure (22.38); no rule in brief, kept as is. |
-| 4903-UYAVB | 2581 | MonthlyCharges | no change (flagged) | 19.35 is >20% from TotalCharges / tenure (25.21); no rule in brief, kept as is. |
-| 8148-WOCMK | 2932 | MonthlyCharges | no change (flagged) | 19.6 is >20% from TotalCharges / tenure (15.62); no rule in brief, kept as is. |
-| 1045-LTCYT | 3201 | MonthlyCharges | no change (flagged) | 21.05 is >20% from TotalCharges / tenure (17.47); no rule in brief, kept as is. |
-| 0323-XWWTN | 3377 | MonthlyCharges | no change (flagged) | 26.4 is >20% from TotalCharges / tenure (40.42); no rule in brief, kept as is. |
-| 9700-ZCLOT | 3734 | MonthlyCharges | no change (flagged) | 20 is >20% from TotalCharges / tenure (16.35); no rule in brief, kept as is. |
-| 7077-XJMET | 3773 | MonthlyCharges | no change (flagged) | 74.15 is >20% from TotalCharges / tenure (61.78); no rule in brief, kept as is. |
-| 4430-YHXGG | 3879 | MonthlyCharges | no change (flagged) | 25.45 is >20% from TotalCharges / tenure (21.05); no rule in brief, kept as is. |
-| 3845-FXCYS | 3915 | MonthlyCharges | no change (flagged) | 19.65 is >20% from TotalCharges / tenure (15.60); no rule in brief, kept as is. |
-| 4116-IQRFR | 4148 | MonthlyCharges | no change (flagged) | 24.1 is >20% from TotalCharges / tenure (18.27); no rule in brief, kept as is. |
-| 3815-SLMEF | 4191 | MonthlyCharges | no change (flagged) | 34.25 is >20% from TotalCharges / tenure (46.45); no rule in brief, kept as is. |
-| 1051-GEJLJ | 4248 | MonthlyCharges | no change (flagged) | 19.5 is >20% from TotalCharges / tenure (13.78); no rule in brief, kept as is. |
-| 6598-RFFVI | 4327 | MonthlyCharges | no change (flagged) | 19.3 is >20% from TotalCharges / tenure (14.15); no rule in brief, kept as is. |
-| 4451-RWASJ | 4500 | MonthlyCharges | no change (flagged) | 19.5 is >20% from TotalCharges / tenure (15.98); no rule in brief, kept as is. |
-| 5144-PQCDZ | 4501 | MonthlyCharges | no change (flagged) | 19.95 is >20% from TotalCharges / tenure (14.81); no rule in brief, kept as is. |
-| 2672-HUYVI | 4531 | MonthlyCharges | no change (flagged) | 91.1 is >20% from TotalCharges / tenure (75.88); no rule in brief, kept as is. |
-| 3345-JHUEO | 4598 | MonthlyCharges | no change (flagged) | 20.2 is >20% from TotalCharges / tenure (13.93); no rule in brief, kept as is. |
-| 6942-LBFDP | 4646 | MonthlyCharges | no change (flagged) | 20.55 is >20% from TotalCharges / tenure (16.80); no rule in brief, kept as is. |
-| 9101-NTIXF | 4725 | MonthlyCharges | no change (flagged) | 19.4 is >20% from TotalCharges / tenure (25.30); no rule in brief, kept as is. |
-| 2303-PJYHN | 4752 | MonthlyCharges | no change (flagged) | 19.85 is >20% from TotalCharges / tenure (26.00); no rule in brief, kept as is. |
-| 8993-PHFWD | 4967 | MonthlyCharges | no change (flagged) | 25.25 is >20% from TotalCharges / tenure (19.63); no rule in brief, kept as is. |
-| 4390-KYULV | 5019 | MonthlyCharges | no change (flagged) | 20.55 is >20% from TotalCharges / tenure (17.05); no rule in brief, kept as is. |
-| 1641-BYBTK | 5208 | MonthlyCharges | no change (flagged) | 20.2 is >20% from TotalCharges / tenure (16.39); no rule in brief, kept as is. |
-| 9945-PSVIP | 5354 | MonthlyCharges | no change (flagged) | 18.7 is >20% from TotalCharges / tenure (15.35); no rule in brief, kept as is. |
-| 2005-DWQZJ | 5427 | MonthlyCharges | no change (flagged) | 19.05 is >20% from TotalCharges / tenure (25.21); no rule in brief, kept as is. |
-| 5485-WUYWF | 5568 | MonthlyCharges | no change (flagged) | 66.4 is >20% from TotalCharges / tenure (47.27); no rule in brief, kept as is. |
-| 8610-ZIKJJ | 5622 | MonthlyCharges | no change (flagged) | 20.3 is >20% from TotalCharges / tenure (15.95); no rule in brief, kept as is. |
-| 3082-WQRVY | 5672 | MonthlyCharges | no change (flagged) | 19.65 is >20% from TotalCharges / tenure (16.33); no rule in brief, kept as is. |
-| 8150-QUDFX | 5701 | MonthlyCharges | no change (flagged) | 19.85 is >20% from TotalCharges / tenure (25.80); no rule in brief, kept as is. |
-| 3620-MWJNE | 5702 | MonthlyCharges | no change (flagged) | 54.45 is >20% from TotalCharges / tenure (43.65); no rule in brief, kept as is. |
-| 7802-EFKNY | 5732 | MonthlyCharges | no change (flagged) | 24.95 is >20% from TotalCharges / tenure (20.08); no rule in brief, kept as is. |
-| 7808-DVWEP | 5794 | MonthlyCharges | no change (flagged) | 20 is >20% from TotalCharges / tenure (16.55); no rule in brief, kept as is. |
-| 7762-ONLJY | 5838 | MonthlyCharges | no change (flagged) | 19.7 is >20% from TotalCharges / tenure (15.74); no rule in brief, kept as is. |
-| 3278-FSIXX | 5938 | MonthlyCharges | no change (flagged) | 45.25 is >20% from TotalCharges / tenure (37.10); no rule in brief, kept as is. |
-| 4291-YZODP | 5948 | MonthlyCharges | no change (flagged) | 20.05 is >20% from TotalCharges / tenure (13.83); no rule in brief, kept as is. |
-| 2587-YNLES | 6168 | MonthlyCharges | no change (flagged) | 20.1 is >20% from TotalCharges / tenure (16.72); no rule in brief, kept as is. |
-| 2308-STERM | 6474 | MonthlyCharges | no change (flagged) | 19.4 is >20% from TotalCharges / tenure (30.52); no rule in brief, kept as is. |
-| 1614-JBEBI | 6487 | MonthlyCharges | no change (flagged) | 20.7 is >20% from TotalCharges / tenure (17.20); no rule in brief, kept as is. |
-| 2108-YKQTY | 6508 | MonthlyCharges | no change (flagged) | 50.7 is >20% from TotalCharges / tenure (37.83); no rule in brief, kept as is. |
-| 7219-TLZHO | 6679 | MonthlyCharges | no change (flagged) | 20.85 is >20% from TotalCharges / tenure (15.72); no rule in brief, kept as is. |
-| 7369-TRPFD | 6729 | MonthlyCharges | no change (flagged) | 18.8 is >20% from TotalCharges / tenure (14.69); no rule in brief, kept as is. |
-| 4396-KLSEH | 6836 | MonthlyCharges | no change (flagged) | 19.85 is >20% from TotalCharges / tenure (15.75); no rule in brief, kept as is. |
-| 3407-QGWLG | 6989 | MonthlyCharges | no change (flagged) | 20.05 is >20% from TotalCharges / tenure (25.15); no rule in brief, kept as is. |
-| 0883-EIBTI | 7226 | MonthlyCharges | no change (flagged) | 19.5 is >20% from TotalCharges / tenure (15.78); no rule in brief, kept as is. |
+| 6180-YBIQI | 51 | MonthlyCharges | no change (flagged) | 24.3 is >20% from TotalCharges / tenure (20.04); flagged per brief rule 5, kept as is. |
+| 3489-HHPFY | 232 | MonthlyCharges | no change (flagged) | 84.05 is >20% from TotalCharges / tenure (67.03); flagged per brief rule 5, kept as is. |
+| 4398-HSCJH | 324 | MonthlyCharges | no change (flagged) | 63.6 is >20% from TotalCharges / tenure (51.88); flagged per brief rule 5, kept as is. |
+| 8053-WWDRO | 335 | MonthlyCharges | no change (flagged) | 19.5 is >20% from TotalCharges / tenure (24.38); flagged per brief rule 5, kept as is. |
+| 8909-BOLNL | 431 | MonthlyCharges | no change (flagged) | 21.2 is >20% from TotalCharges / tenure (17.35); flagged per brief rule 5, kept as is. |
+| 2387-KDZQY | 602 | MonthlyCharges | no change (flagged) | 20.1 is >20% from TotalCharges / tenure (16.44); flagged per brief rule 5, kept as is. |
+| 2260-USTRB | 674 | MonthlyCharges | no change (flagged) | 70.2 is >20% from TotalCharges / tenure (57.98); flagged per brief rule 5, kept as is. |
+| 6260-XLACS | 1217 | MonthlyCharges | no change (flagged) | 19.7 is >20% from TotalCharges / tenure (29.45); flagged per brief rule 5, kept as is. |
+| 3156-QLHBO | 1382 | MonthlyCharges | no change (flagged) | 19.25 is >20% from TotalCharges / tenure (24.18); flagged per brief rule 5, kept as is. |
+| 4195-SMMNX | 1388 | MonthlyCharges | no change (flagged) | 20.35 is >20% from TotalCharges / tenure (16.60); flagged per brief rule 5, kept as is. |
+| 1142-WACZW | 1529 | MonthlyCharges | no change (flagged) | 29.85 is >20% from TotalCharges / tenure (37.80); flagged per brief rule 5, kept as is. |
+| 2792-VPPET | 1613 | MonthlyCharges | no change (flagged) | 20.5 is >20% from TotalCharges / tenure (25.65); flagged per brief rule 5, kept as is. |
+| 5647-URDKA | 1702 | MonthlyCharges | no change (flagged) | 19.7 is >20% from TotalCharges / tenure (16.28); flagged per brief rule 5, kept as is. |
+| 6924-TDGMT | 1959 | MonthlyCharges | no change (flagged) | 20.55 is >20% from TotalCharges / tenure (16.81); flagged per brief rule 5, kept as is. |
+| 7343-EOBEU | 2065 | MonthlyCharges | no change (flagged) | 23.6 is >20% from TotalCharges / tenure (29.68); flagged per brief rule 5, kept as is. |
+| 9426-SXNHE | 2121 | MonthlyCharges | no change (flagged) | 18.75 is >20% from TotalCharges / tenure (26.57); flagged per brief rule 5, kept as is. |
+| 1385-TQOZW | 2135 | MonthlyCharges | no change (flagged) | 20.45 is >20% from TotalCharges / tenure (16.39); flagged per brief rule 5, kept as is. |
+| 9294-TDIPC | 2158 | MonthlyCharges | no change (flagged) | 20.2 is >20% from TotalCharges / tenure (16.75); flagged per brief rule 5, kept as is. |
+| 5066-GFJMM | 2166 | MonthlyCharges | no change (flagged) | 19.9 is >20% from TotalCharges / tenure (15.25); flagged per brief rule 5, kept as is. |
+| 2791-SFVEW | 2461 | MonthlyCharges | no change (flagged) | 20.15 is >20% from TotalCharges / tenure (26.46); flagged per brief rule 5, kept as is. |
+| 9505-SQFSW | 2510 | MonthlyCharges | no change (flagged) | 40.3 is >20% from TotalCharges / tenure (30.83); flagged per brief rule 5, kept as is. |
+| 3677-IYRBF | 2557 | MonthlyCharges | no change (flagged) | 30.4 is >20% from TotalCharges / tenure (39.33); flagged per brief rule 5, kept as is. |
+| 6022-KOUQO | 2559 | MonthlyCharges | no change (flagged) | 29.05 is >20% from TotalCharges / tenure (22.38); flagged per brief rule 5, kept as is. |
+| 4903-UYAVB | 2581 | MonthlyCharges | no change (flagged) | 19.35 is >20% from TotalCharges / tenure (25.21); flagged per brief rule 5, kept as is. |
+| 8148-WOCMK | 2932 | MonthlyCharges | no change (flagged) | 19.6 is >20% from TotalCharges / tenure (15.62); flagged per brief rule 5, kept as is. |
+| 1045-LTCYT | 3201 | MonthlyCharges | no change (flagged) | 21.05 is >20% from TotalCharges / tenure (17.47); flagged per brief rule 5, kept as is. |
+| 0323-XWWTN | 3377 | MonthlyCharges | no change (flagged) | 26.4 is >20% from TotalCharges / tenure (40.42); flagged per brief rule 5, kept as is. |
+| 9700-ZCLOT | 3734 | MonthlyCharges | no change (flagged) | 20 is >20% from TotalCharges / tenure (16.35); flagged per brief rule 5, kept as is. |
+| 7077-XJMET | 3773 | MonthlyCharges | no change (flagged) | 74.15 is >20% from TotalCharges / tenure (61.78); flagged per brief rule 5, kept as is. |
+| 4430-YHXGG | 3879 | MonthlyCharges | no change (flagged) | 25.45 is >20% from TotalCharges / tenure (21.05); flagged per brief rule 5, kept as is. |
+| 3845-FXCYS | 3915 | MonthlyCharges | no change (flagged) | 19.65 is >20% from TotalCharges / tenure (15.60); flagged per brief rule 5, kept as is. |
+| 4116-IQRFR | 4148 | MonthlyCharges | no change (flagged) | 24.1 is >20% from TotalCharges / tenure (18.27); flagged per brief rule 5, kept as is. |
+| 3815-SLMEF | 4191 | MonthlyCharges | no change (flagged) | 34.25 is >20% from TotalCharges / tenure (46.45); flagged per brief rule 5, kept as is. |
+| 1051-GEJLJ | 4248 | MonthlyCharges | no change (flagged) | 19.5 is >20% from TotalCharges / tenure (13.78); flagged per brief rule 5, kept as is. |
+| 6598-RFFVI | 4327 | MonthlyCharges | no change (flagged) | 19.3 is >20% from TotalCharges / tenure (14.15); flagged per brief rule 5, kept as is. |
+| 4451-RWASJ | 4500 | MonthlyCharges | no change (flagged) | 19.5 is >20% from TotalCharges / tenure (15.98); flagged per brief rule 5, kept as is. |
+| 5144-PQCDZ | 4501 | MonthlyCharges | no change (flagged) | 19.95 is >20% from TotalCharges / tenure (14.81); flagged per brief rule 5, kept as is. |
+| 2672-HUYVI | 4531 | MonthlyCharges | no change (flagged) | 91.1 is >20% from TotalCharges / tenure (75.88); flagged per brief rule 5, kept as is. |
+| 3345-JHUEO | 4598 | MonthlyCharges | no change (flagged) | 20.2 is >20% from TotalCharges / tenure (13.93); flagged per brief rule 5, kept as is. |
+| 6942-LBFDP | 4646 | MonthlyCharges | no change (flagged) | 20.55 is >20% from TotalCharges / tenure (16.80); flagged per brief rule 5, kept as is. |
+| 9101-NTIXF | 4725 | MonthlyCharges | no change (flagged) | 19.4 is >20% from TotalCharges / tenure (25.30); flagged per brief rule 5, kept as is. |
+| 2303-PJYHN | 4752 | MonthlyCharges | no change (flagged) | 19.85 is >20% from TotalCharges / tenure (26.00); flagged per brief rule 5, kept as is. |
+| 8993-PHFWD | 4967 | MonthlyCharges | no change (flagged) | 25.25 is >20% from TotalCharges / tenure (19.63); flagged per brief rule 5, kept as is. |
+| 4390-KYULV | 5019 | MonthlyCharges | no change (flagged) | 20.55 is >20% from TotalCharges / tenure (17.05); flagged per brief rule 5, kept as is. |
+| 1641-BYBTK | 5208 | MonthlyCharges | no change (flagged) | 20.2 is >20% from TotalCharges / tenure (16.39); flagged per brief rule 5, kept as is. |
+| 9945-PSVIP | 5354 | MonthlyCharges | no change (flagged) | 18.7 is >20% from TotalCharges / tenure (15.35); flagged per brief rule 5, kept as is. |
+| 2005-DWQZJ | 5427 | MonthlyCharges | no change (flagged) | 19.05 is >20% from TotalCharges / tenure (25.21); flagged per brief rule 5, kept as is. |
+| 5485-WUYWF | 5568 | MonthlyCharges | no change (flagged) | 66.4 is >20% from TotalCharges / tenure (47.27); flagged per brief rule 5, kept as is. |
+| 8610-ZIKJJ | 5622 | MonthlyCharges | no change (flagged) | 20.3 is >20% from TotalCharges / tenure (15.95); flagged per brief rule 5, kept as is. |
+| 3082-WQRVY | 5672 | MonthlyCharges | no change (flagged) | 19.65 is >20% from TotalCharges / tenure (16.33); flagged per brief rule 5, kept as is. |
+| 8150-QUDFX | 5701 | MonthlyCharges | no change (flagged) | 19.85 is >20% from TotalCharges / tenure (25.80); flagged per brief rule 5, kept as is. |
+| 3620-MWJNE | 5702 | MonthlyCharges | no change (flagged) | 54.45 is >20% from TotalCharges / tenure (43.65); flagged per brief rule 5, kept as is. |
+| 7802-EFKNY | 5732 | MonthlyCharges | no change (flagged) | 24.95 is >20% from TotalCharges / tenure (20.08); flagged per brief rule 5, kept as is. |
+| 7808-DVWEP | 5794 | MonthlyCharges | no change (flagged) | 20 is >20% from TotalCharges / tenure (16.55); flagged per brief rule 5, kept as is. |
+| 7762-ONLJY | 5838 | MonthlyCharges | no change (flagged) | 19.7 is >20% from TotalCharges / tenure (15.74); flagged per brief rule 5, kept as is. |
+| 3278-FSIXX | 5938 | MonthlyCharges | no change (flagged) | 45.25 is >20% from TotalCharges / tenure (37.10); flagged per brief rule 5, kept as is. |
+| 4291-YZODP | 5948 | MonthlyCharges | no change (flagged) | 20.05 is >20% from TotalCharges / tenure (13.83); flagged per brief rule 5, kept as is. |
+| 2587-YNLES | 6168 | MonthlyCharges | no change (flagged) | 20.1 is >20% from TotalCharges / tenure (16.72); flagged per brief rule 5, kept as is. |
+| 2308-STERM | 6474 | MonthlyCharges | no change (flagged) | 19.4 is >20% from TotalCharges / tenure (30.52); flagged per brief rule 5, kept as is. |
+| 1614-JBEBI | 6487 | MonthlyCharges | no change (flagged) | 20.7 is >20% from TotalCharges / tenure (17.20); flagged per brief rule 5, kept as is. |
+| 2108-YKQTY | 6508 | MonthlyCharges | no change (flagged) | 50.7 is >20% from TotalCharges / tenure (37.83); flagged per brief rule 5, kept as is. |
+| 7219-TLZHO | 6679 | MonthlyCharges | no change (flagged) | 20.85 is >20% from TotalCharges / tenure (15.72); flagged per brief rule 5, kept as is. |
+| 7369-TRPFD | 6729 | MonthlyCharges | no change (flagged) | 18.8 is >20% from TotalCharges / tenure (14.69); flagged per brief rule 5, kept as is. |
+| 4396-KLSEH | 6836 | MonthlyCharges | no change (flagged) | 19.85 is >20% from TotalCharges / tenure (15.75); flagged per brief rule 5, kept as is. |
+| 3407-QGWLG | 6989 | MonthlyCharges | no change (flagged) | 20.05 is >20% from TotalCharges / tenure (25.15); flagged per brief rule 5, kept as is. |
+| 0883-EIBTI | 7226 | MonthlyCharges | no change (flagged) | 19.5 is >20% from TotalCharges / tenure (15.78); flagged per brief rule 5, kept as is. |
